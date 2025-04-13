@@ -2,7 +2,7 @@
 // https://cors-anywhere.herokuapp.com/corsdemo
 
 const apiUrl = "https://glot.io/api/run/python/latest";
-const proxyUrl = "https://cors-anywhere.herokuapp.com/"; // Proxy URL
+const proxyUrl = "http://localhost:5000/proxy?url="; // Proxy URL
 const url = proxyUrl + apiUrl;
 
 function submitCode() {
