@@ -4,14 +4,22 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/mystery/mystery.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <title>Mystery 1</title>
     </head>
     <body>
         <div class="code-container">
-            <p>mystery-solver.exe</p>
+            <p>
+                <span>mystery-solver.exe</span>
+                <button onclick="submitCode()">Submit code&nbsp;<i class="fa-solid fa-play"></i></button>
+            </p>
             <textarea name="" id="code-area"></textarea>
         </div>
-        <button onclick="submitCode()">Submit code</button>
+        <div class="console-container">
+            <p>Console</p>
+            <div id="console">C:\solver></div>
+        </div>
+
         <script src="/env.js"></script>
         <script src="/mystery/mystery.js"></script>
     </body>
