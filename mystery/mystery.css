@@ -36,52 +36,6 @@
         overflow: scroll;
         resize: none;
         border-radius: 0;
-       
-
-        &::-webkit-scrollbar {
-            width: 17px;
-            height: 17px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background-color: #d4d0c8;
-            border-left: 1px solid #808080; 
-            border-top: 1px solid #ffffff;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: #878787;
-            border: 2px solid #c0c0c0; 
-            border-top-color: #ffffff; 
-            border-left-color: #ffffff; 
-            border-right-color: #505050;
-            border-bottom-color: #505050;
-            cursor: pointer;
-        }
-
-        &::-webkit-scrollbar-corner {
-            background-color: #d4d0c8;
-        }
-
-        &::-webkit-scrollbar-button {
-            background-color: #d4d0c8;
-            border: 2px solid #c0c0c0;
-            border-top-color: #ffffff;
-            border-left-color: #ffffff;
-            border-right-color: #505050;
-            border-bottom-color: #505050;
-            height: 17px;
-            width: 17px;
-            cursor: pointer;
-        }
-
-        &::-webkit-scrollbar-button:active {
-            border-top-color: #505050;
-            border-left-color: #505050;
-            border-right-color: #ffffff;
-            border-bottom-color: #ffffff;
-            background-color: #c0c0c0;
-        }
     }
 }
 
@@ -103,6 +57,8 @@
         border-radius: 0;
         border: 1px solid #808080;
         padding: 4px;
+        overflow-y: scroll;
+
     color: white;
     }
 
@@ -118,4 +74,54 @@
         }
     }
 
+}
+
+
+/* scrollbar overwrite */
+
+.code-container textarea, .console-container #console {
+    &::-webkit-scrollbar {
+        width: 17px;
+        height: 17px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #d4d0c8;
+        border-left: 1px solid #808080; 
+        border-top: 1px solid #ffffff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #878787;
+        border: 2px solid #c0c0c0; 
+        border-top-color: #ffffff; 
+        border-left-color: #ffffff; 
+        border-right-color: #505050;
+        border-bottom-color: #505050;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-corner {
+        background-color: #d4d0c8;
+    }
+
+    &::-webkit-scrollbar-button {
+        background-color: #d4d0c8;
+        border: 2px solid #c0c0c0;
+        border-top-color: #ffffff;
+        border-left-color: #ffffff;
+        border-right-color: #505050;
+        border-bottom-color: #505050;
+        height: 17px;
+        width: 17px;
+        cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-button:active {
+        border-top-color: #505050;
+        border-left-color: #505050;
+        border-right-color: #ffffff;
+        border-bottom-color: #ffffff;
+        background-color: #c0c0c0;
+    }
 }
