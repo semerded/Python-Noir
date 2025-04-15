@@ -1,0 +1,46 @@
+@import url("/main.css");
+
+#documentation-page {
+    margin: auto;
+
+
+    max-width: 1200px;
+    width: 100%;
+    
+    #page-container {
+        display: flex;
+
+        nav {
+            width: 300px;
+            height: 100svh;
+    
+            button {
+                width: 100%;
+                height: 35px;
+                background-color: var(--background);
+                color: var(--text);
+                margin: 0;
+
+                &.active {
+                    background-color: var(--primary);
+                }
+            }
+        }
+    
+        #documentation-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background-color: var(--syntax-bg);
+            color: var(--syntax-fg);
+            height: 100svh;
+            padding: 16px;
+
+            h2 {
+                margin: 8px;
+            }
+        }
+    }
+
+    
+}
