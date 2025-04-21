@@ -1,0 +1,50 @@
+{
+    "path": "/hello-world",
+    "title": "hello world! (printing to stdout)",
+    "syntax": {
+        "code": "<span style=\"color:var(--syntax-func)\">print</span><span>(</span><span style=\"color:var(--syntax-string)\">\"hello world!\"</span><span>)</span>",
+        "description": "We call the function <span style=\"color:var(--syntax-func)\">print</span> with the text <span style=\"color:var(--syntax-string)\">\"hello world!\"</span> as an argument. Because the text is a string, we need to wrap it in quotes → \" or '. The first quote tells the computer that the following characters are a string, and the second quote closes the string so the computer knows when to stop that string."
+    },
+    "content": [
+        {
+            "header": "What are we doing?",
+            "content": "We are going to show the text <span style=\"color:var(--syntax-string)\">\"hello world!\"</span> in the terminal. The text is written to the standard output (stdout)."
+        },
+        {
+            "header": "What is the terminal?",
+            "content": "The terminal is a text-based interface where you can type commands for the computer to run. It's a way to talk directly to the system using text instead of clicking buttons."
+        },
+        {
+            "header": "What is stdout?",
+            "content": "Stdout (short for standard output) is where programs send their output text. When we <span style=\"color:var(--syntax-func)\">print</span> something in a program, it usually goes to stdout, which shows up in the terminal."
+        },
+        {
+            "header": "How do we print something?",
+            "content": "In Python, we use the <span style=\"color:var(--syntax-func)\">print()</span> function. It shows the text inside it on the terminal."
+        },
+        {
+            "header": "What happens when we run it?",
+            "content": "The computer runs the <span style=\"color:var(--syntax-func)\">print()</span> function and sends the text <span style=\"color:var(--syntax-string)\">\"hello world!\"</span> to stdout. You'll see it appear in the terminal."
+        },
+        {
+            "header": "multiple arguments",
+            "content": "You can also pass multiple arguments to the <span style=\"color:var(--syntax-func)\">print()</span> function. For example, <span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"hello\"</span>, <span style=\"color:var(--syntax-string)\">\"world\"</span>) will print <span style=\"color:var(--syntax-string)\">\"hello world\"</span> in the terminal. Notice that the arguments are separated by commas and that the <span style=\"color:var(--syntax-func)\">print</span> function automatically adds a space between each argument."
+        }
+    ],
+    "note": {
+        "content": [
+            {
+                "header": "Not only strings",
+                "content": "You can also input numbers, booleans (<span style=\"color:var(--syntax-string)\">True</span> or <span style=\"color:var(--syntax-string)\">False</span>), and other datatypes as arguments for the <span style=\"color:var(--syntax-func)\">print</span> function."
+            },
+            {
+                "header": "standard functions",
+                "content": "The <span style=\"color:var(--syntax-func)\">print</span> function is one of the standard functions provided in Python. You don't need to install anything to use it."
+            },
+            {
+                "header": "stdin and stderr",
+                "content": "We mentioned that stdout is the standard output, but you also have stderr and stdin. Stderr is the standard error, which is used to show errors and warnings. Stdin is the standard input, which is used to get input from the user."
+            }
+        ]
+    }
+}

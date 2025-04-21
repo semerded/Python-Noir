@@ -1,9 +1,19 @@
 :root {
-    --background: #0D0D0D;
-    --contrast: #1C1C1C;
-    --primary: #8B0000;
+    --background: #0d0d0d;
+    --contrast: #1c1c1c;
+    --primary: #8b0000;
     --sepia-light: #eddbc5;
     --sepia-dark: #b19775;
-    --text: #F0F0F0;
-    --font: 'Typewriter', monospace;
+    --text: #f0f0f0;
+    --font: "Typewriter", monospace;
+
+
+    --syntax-bg: #282c34;
+    --syntax-fg: #e4e7ed;
+    --syntax-func: #61afef;
+    --syntax-string: #98c379;
+    --syntax-keyword: #c678dd;
+    --syntax-number: #d19a66;
+    --syntax-comment: #5c6370;
+    --syntax-operator: #56b6c2;
 }
