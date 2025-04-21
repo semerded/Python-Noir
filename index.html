@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+    <title>Python Noir</title>
+</head>
+<body>
+    <div>
+        <header>
+            <ul>
+                <li><a href="">Home Page</a></li>
+                <li><a href="">Backstory</a></li>
+            </ul>
+        </header>
+        <main>
+            <p>Python-Noir</p>
+            <a href=""><img src="Images/google-docs.png" alt=""></a>
+            <a href=""><img src="Images/Continue-button.png" alt="Continue button"></a>
+            <a href=""><img src="Images/Start-button.png" alt=""></a>
+        </main>
+    </div>
+    <audio id="bgMusic" autoplay loop>
+        <source src="Sound Effects/backstory_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.5; // Set volume to 50%
+        bgMusic.play().catch(error => {
+            console.error('Error playing audio:', error);
+        });
+    </script>
+</body>
+</html>
