@@ -33,7 +33,7 @@
             width: 100%;
             background-color: var(--syntax-bg);
             color: var(--syntax-fg);
-            height: 100svh;
+            height: 100%;
             padding: 16px;
 
             h2 {

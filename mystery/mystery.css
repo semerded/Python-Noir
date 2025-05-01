@@ -1,5 +1,14 @@
 @import url("/main.css");
 
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prog-container {
+    width: 50%;
+}
+ 
 .code-container {
     width: 45vw;
     height: 70vh;
@@ -64,6 +73,16 @@
 
 }
 
+.story-container {
+    width: 50%;
+
+    #story {
+        height: 70vh;
+        overflow-y: scroll;
+    }
+    
+}
+
 @media screen and (max-width: 768px) {
     .code-container {
         width: 80vw;
@@ -124,4 +143,15 @@
         border-bottom-color: #ffffff;
         background-color: #c0c0c0;
     }
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    top: 25%;
+    left: 25%;   
+    width: 50vw;
+    height: 50vh;
+    background-color: #006d1b;
 }

@@ -9,26 +9,36 @@
         <title>Mystery 1</title>
     </head>
     <body>
-        <div class="code-container">
-            <p>
-                <span>mystery-solver.exe</span>
-                <button onclick="submitCode()">Submit code&nbsp;<i class="fa-solid fa-play"></i></button>
-            </p>
-            <textarea name="" id="code-area"></textarea>
-        </div>
-<<<<<<< HEAD
-        <button onclick="submitCode()">Submit code</button>
-        <div class="button">
-            <a href="index.html"><img src="Images/home.png" alt="Home Page button"></a>
-        <a href="mystery2.html"><img src="../Images/Next-button.png" alt=""></a>
-        </div>
-=======
-        <div class="console-container">
-            <p>Console</p>
-            <div id="console">C:\PythonNoir></div>
+        <main>
+            <div class="prog-container">
+                <div class="code-container">
+                    <p>
+                        <span>mystery-solver.exe</span>
+                        <button onclick="submitCode()">Submit code&nbsp;<i class="fa-solid fa-play"></i></button>
+                    </p>
+                    <textarea name="" id="code-area"></textarea>
+                </div>
+                <div class="console-container">
+                    <p>Console</p>
+                    <div id="console">Montie&apos;s-terminal></div>
+                </div>
+            </div>
+            <div class="story-container">
+                <div id="story">
+                    <h1 id="story-title"></h1>
+                    <p id="story-content"></p>
+                    <h2 id="story-challenge"></h2>
+                </div>
+            </div>
+        </main>
+
+        <div id="popup">
+            <div id="popup-content">
+                <p id="popup-text"></p>
+                <button onclick="nextChapter()">Next chapter</button>
+            </div>
         </div>
 
->>>>>>> 944699c0e306e93c63f90d33944caaa290cbdf95
         <script src="/env.js"></script>
         <script src="/mystery/mystery.js"></script>
         <audio id="bgMusic" autoplay loop>
