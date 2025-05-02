@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=VT323&display=swap');
+
 :root {
     --background: #0d0d0d;
     --contrast: #1c1c1c;
     --primary: #8b0000;
+    --primary-light: #8b0000a4;
     --sepia-light: #eddbc5;
     --sepia-dark: #b19775;
     --text: #f0f0f0;
+    --text-light: #ffffff;
     --font: "Typewriter", monospace;
+    --font-code: "VT323", monospace;
+    --font-title: "Pixelify Sans", sans-serif;
+    --font-body: "Poppins", sans-serif;
+    --font-mono: "Roboto", monospace;
 
 
     --syntax-bg: #282c34;

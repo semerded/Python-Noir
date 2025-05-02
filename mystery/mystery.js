@@ -8,6 +8,28 @@ var loadingAnimationActive = false;
 
 const consoleContainer = document.getElementById("console");
 const consolePrefix = "C:\\PythonNoir>";
+let currentChapter = localStorage.getItem("currentChapter") ?? 0;
+var expectedOutput;
+
+let mysteryData;
+
+fetch("/mystery/mystery-data.json")
+.then((response) => response.json())
+.then((data) => {
+    mysteryData = data;
+    insertChapterData();
+});
+
+
+
+
+function nextChapter() {
+    currentChapter++;
+    localStorage.setItem("currentChapter", currentChapter);
+    document.getElementById("popup").style.display = "none";
+    insertChapterData();
+    document.getElementById("console").innerHTML = "Montie&apos;s-terminal>";
+}
 
 function submitCode() {
     const code = document.getElementById("code-area").value;
@@ -42,30 +64,61 @@ function submitCode() {
             console.log("Response:", data);
             if (data.stdout) {
                 console.log("Output:", data.stdout);
-                consoleContainer.innerHTML = consolePrefix + " mystery solver.exe result:<br>" + "<span style='color: green;'>" + data.stdout + "</span>";
+                consoleContainer.innerHTML =
+                    consolePrefix +
+                    " mystery solver.exe result:<br>" +
+                    "<span style='color: yellowgreen;'>" +
+                    data.stdout +
+                    "</span>";
+
+                console.log(data.stdout, expectedOutput, data.stdout === expectedOutput);
+                
+                if (data.stdout.replace(/\n/g, "") === expectedOutput) {
+                    document.getElementById("popup").style.display = "block";
+                }
             }
             if (data.stderr) {
                 console.error("Error:", data.stderr);
-                let errOutput = data.stderr.substring(data.stderr.indexOf(",") + 1).replace(/&/g, '&amp;')
-                .replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;')
-                .replace(/\n/g, '<br>') // Replace newlines with <br> tags
-                .replace(/\t/g, '&nbsp;&nbsp;&nbsp;&nbsp;'); // Convert tabs to spaces
-                consoleContainer.innerHTML = consolePrefix + " mystery solver.exe error:<br>" + "<pre style='color: red;'>" + errOutput + "</pre>";
+                let errOutput = data.stderr
+                    .substring(data.stderr.indexOf(",") + 1)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/\n/g, "<br>") // Replace newlines with <br> tags
+                    .replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;"); // Convert tabs to spaces
+                consoleContainer.innerHTML =
+                    consolePrefix +
+                    " mystery solver.exe error:<br>" +
+                    "<pre style='color: red;'>" +
+                    errOutput +
+                    "</pre>";
             }
         })
         .catch((error) => console.error("Error:", error));
 }
 
 function loadingAnimation(id) {
-    
     var animation = document.getElementById(id);
     if (loadingAnimationActive) {
         if (animation.innerHTML.length >= 3) {
             animation.innerHTML = "";
         }
-            animation.innerHTML = animation.innerHTML + ".";
+        animation.innerHTML = animation.innerHTML + ".";
         setTimeout(() => loadingAnimation(id), 250);
     } else {
     }
+}
+
+function insertChapterData() {
+    console.log(mysteryData);
+    
+    let chapterData = mysteryData[currentChapter];
+    document.getElementById("story-title").innerHTML = chapterData["title"];
+    document.getElementById("story-content").innerHTML = chapterData["story"];
+    document.getElementById("story-challenge").innerHTML =
+        chapterData["challenge"];
+    document.getElementById("popup-text").innerHTML =
+        chapterData["success_message"];
+    document.getElementById("code-area").value = chapterData["starter_code"];
+    expectedOutput = chapterData["expected_output"];
 }

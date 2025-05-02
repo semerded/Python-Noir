@@ -1,0 +1,26 @@
+[
+    {
+      "chapter": "1",
+      "title": "The Terminal Truth",
+      "type": "programming",
+      "story": "You sit at Montie's desk. The fan hums. On the screen, a message blinks:\n\n> Type \"print('Start Investigation')\" to begin\n\nThis was Montie's last script. Let's see where it leads.",
+      "concept": "Printing to terminal",
+      "challenge": "Write a Python line that outputs 'Start Investigation' to the terminal.",
+      "starter_code": "",
+      "expected_code": "print(\"Start Investigation\")",
+      "expected_output": "Start Investigation",
+      "success_message": "The terminal responds. A hidden log file unzips. You're in. The case begins now."
+    },
+    {
+      "chapter": "2",
+      "title": "The Locker Code",
+      "type": "programming",
+      "story": "You find a sticky note: \"Locker 42 contains backup files.\" But the locker is digital. It needs a code, and the clue? A scrambled note with:\n\ntemp = 4\ncode = temp + 2\n\nYou need to find out what value to enter.",
+      "concept": "Variables and arithmetic",
+      "challenge": "Use the variables to compute the locker code and print the result.",
+      "starter_code": "temp = 4\ncode = temp + 2\n# print the code here",
+      "expected_code": "temp = 4\ncode = temp + 2\nprint(code)",
+      "expected_output": "6",
+      "success_message": "The locker clicks open. Inside: a dusty drive labeled “Montie's Secrets - Read Me First”. This case is deeper than it looks."
+    }
+  ]
