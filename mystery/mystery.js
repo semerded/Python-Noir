@@ -18,6 +18,7 @@ fetch("/mystery/mystery-data.json")
 .then((data) => {
     mysteryData = data;
     insertChapterData();
+    updateHighlighting();
 });
 
 
@@ -29,10 +30,11 @@ function nextChapter() {
     document.getElementById("popup").style.display = "none";
     insertChapterData();
     document.getElementById("console").innerHTML = "Montie&apos;s-terminal>";
+    updateHighlighting();
 }
 
 function submitCode() {
-    const code = document.getElementById("code-area").value;
+    const code = document.getElementById("editor").value;
     console.log("code being send to interpreter:", code);
 
     consoleContainer.innerHTML =
@@ -119,8 +121,18 @@ function insertChapterData() {
         chapterData["challenge"];
     document.getElementById("popup-text").innerHTML =
         chapterData["success_message"];
-    document.getElementById("code-area").value = chapterData["starter_code"];
+    document.getElementById("editor").value = chapterData["starter_code"];
+    document.getElementById("story-type").innerHTML = "# type: " + chapterData["type"];
+    document.getElementById("story-chapter").innerHTML = "# chapter: " + (++currentChapter);
     expectedOutput = chapterData["expected_output"];
+
+    for (let i = 0; i < chapterData["relevant_docs"].length; i++) {
+        let a = document.createElement("a");
+        a.innerHTML = chapterData["relevant_docs"][i].replace("-", " ");
+        a.href = "/documentation/documentation.html#" + chapterData["relevant_docs"][i] + ".json";
+        a.target = "_blank";
+        document.getElementById("relevant-docs").append(a) ;
+    }
 }
 
 function reset() {

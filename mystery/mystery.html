@@ -2,10 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <link rel="shortcut icon" href="/Images/favicon.png" type="image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/Images/favicon.png" type="image/x-icon" />
-        <link rel="stylesheet" href="/mystery/mystery.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="/mystery/mystery.css" />
+        <link rel="stylesheet" href="/mystery/code-area.css">
         <title>Mystery 1</title>
     </head>
     <body>
@@ -14,9 +15,15 @@
                 <div class="code-container">
                     <p>
                         <span>mystery-solver.exe</span>
+                <button onclick="reset()">!debug reset</button>
+
                         <button onclick="submitCode()">Submit code&nbsp;<i class="fa-solid fa-play"></i></button>
                     </p>
-                    <textarea name="" id="code-area"></textarea>
+                    <div class="editor-container">
+                        <pre class="highlight"><code id="highlighted"></code></pre>
+                        <textarea id="editor" spellcheck="false"></textarea>
+                      </div>
+                    <!-- <textarea name="" id="code-area"></textarea> -->
                 </div>
                 <div class="console-container">
                     <p>Console</p>
@@ -24,12 +31,20 @@
                 </div>
             </div>
             <div class="story-container">
-                <button onclick="reset()">!debug reset</button>
                 <div id="story">
+                    <h3 id="story-chapter"></h3>
+                    <h3 id="story-type"></h3>
                     <h1 id="story-title"></h1>
                     <p id="story-content"></p>
                     <h2 id="story-challenge"></h2>
                 </div>
+                <div id="relevant-docs-container">
+                    <h4>Relevant documentation</h4>
+                    <div id="relevant-docs">
+
+                    </div>
+                </div>
+                
             </div>
         </main>
 
@@ -42,6 +57,7 @@
 
         <script src="/env.js"></script>
         <script src="/mystery/mystery.js"></script>
+        <script src="/mystery/syntaxHighlighting.js"></script>
         <audio id="bgMusic" autoplay loop>
             <source src="../Sound Effects/challenge1.mp3" type="audio/mpeg">
             Your browser does not support the audio element.

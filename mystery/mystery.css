@@ -3,22 +3,30 @@
 main {
     display: flex;
     justify-content: space-between;
+    background-image: url("/Images/mystery-bg.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .prog-container {
     width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
- 
+
 .code-container {
+    margin-bottom: 16px;
     width: 45vw;
-    height: 70vh;
     p {
         height: 30px;
         width: 100%;
         margin: 0;
         color: white;
         padding-left: 5px;
-        background-color: #1700d1;
+        background-color: var(--primary);
 
         display: flex;
         justify-content: space-between;
@@ -33,18 +41,9 @@ main {
             margin: 4px;
 
             i {
-               color: #006d1b; 
+                color: #006d1b;
             }
         }
-    }
-
-    textarea {
-        background-color: #c0c0c0;
-        width: 100%;
-        height: calc(70vh - 40px);
-        overflow: scroll;
-        resize: none;
-        border-radius: 0;
     }
 }
 
@@ -54,11 +53,16 @@ main {
 
     p {
         height: 30px;
-        background-color: #1700d1;
-        color: white;
+        width: 100%;
         margin: 0;
+        color: white;
+        padding-left: 5px;
+        background-color: var(--primary);
+
+        display: flex;
+        justify-content: space-between;
     }
-    
+
     #console {
         height: calc(25vh - 30px);
         width: 100%;
@@ -68,19 +72,50 @@ main {
         padding: 4px;
         overflow-y: scroll;
 
-    color: white;
+        color: white;
     }
-
 }
 
-.story-container {
-    width: 50%;
+.code-container {
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+}
 
-    #story {
-        height: 70vh;
-        overflow-y: scroll;
+
+
+.story-container {
+    background-image: url("/Images/mystery-text-bg.png");
+    background-size: cover;
+    margin: auto;
+    width: 30%;
+    height: 70vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#relevant-docs-container {
+    h4 {
+        margin: 8px 0;
     }
-    
+
+    #relevant-docs {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        a {
+            text-decoration: underline;
+            color: var(--primary);
+            font-size: larger;
+            font-weight: 700;
+            width: fit-content;
+            
+            &:hover {
+                color: var(--primary-light);
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -92,13 +127,12 @@ main {
             height: 260px;
         }
     }
-
 }
-
 
 /* scrollbar overwrite */
 
-.code-container textarea, .console-container #console {
+.code-container pre,
+.console-container #console {
     &::-webkit-scrollbar {
         width: 17px;
         height: 17px;
@@ -106,15 +140,15 @@ main {
 
     &::-webkit-scrollbar-track {
         background-color: #d4d0c8;
-        border-left: 1px solid #808080; 
+        border-left: 1px solid #808080;
         border-top: 1px solid #ffffff;
     }
 
     &::-webkit-scrollbar-thumb {
         background-color: #878787;
-        border: 2px solid #c0c0c0; 
-        border-top-color: #ffffff; 
-        border-left-color: #ffffff; 
+        border: 2px solid #c0c0c0;
+        border-top-color: #ffffff;
+        border-left-color: #ffffff;
         border-right-color: #505050;
         border-bottom-color: #505050;
         cursor: pointer;
@@ -150,9 +184,9 @@ main {
     color: white;
     display: none;
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     top: 25%;
-    left: 25%;   
+    left: 25%;
     width: 50vw;
     height: 50vh;
     background-color: rgba(0, 0, 0, 0.687);
@@ -162,10 +196,9 @@ main {
     box-shadow: rgba(0, 0, 0, 0.687) 0 0 10px;
 
     &:hover {
-    transition: box-shadow 400ms;
+        transition: box-shadow 400ms;
 
-    box-shadow: rgba(0, 0, 0, 0.687) 0 0 40px;
-
+        box-shadow: rgba(0, 0, 0, 0.687) 0 0 40px;
     }
 
     #popup-content {
