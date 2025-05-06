@@ -9,6 +9,24 @@ body {
     justify-content: center;
     overflow-y: scroll;
 }
+a#home-button {
+    transition: box-shadow 400ms;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 48px;
+    height: 48px;
+    background-image: url("/Images/home.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+
+    &:hover {
+        transition: box-shadow 400ms;
+        box-shadow: rgb(251, 251, 251) 0 0 30px;
+    }
+}
 
 #documentation-page {
     margin: auto;
