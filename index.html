@@ -34,5 +34,14 @@
             console.error('Error playing audio:', error);
         });
     </script>
+    <script>
+        let currentChapter = parseInt(localStorage.getItem("currentChapter") ?? 0);
+        if (currentChapter > 0) {
+            const button = document.querySelector(".main-btn");
+            button.href = "/mystery/mystery.html";
+            button.innerHTML = "CONTINUE (chapter " + currentChapter + ")";
+        }
+
+    </script>
 </body>
 </html>
