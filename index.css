@@ -5,7 +5,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+a{
+    text-decoration: none;
+}
 #container {
     background-image: url('./Images/Home-Page.png');
     background-repeat: no-repeat;
@@ -46,15 +48,14 @@
         }
 
         .start-btn {
-            
-            
-            bottom: 0px;
-            font-size: 20px;
+            position: relative;
+            font-size: 2em;
+            font-family: var(--font);
             text-align: center;
             display: inline-block;
             margin: 5px;
             font-weight: bold;
-            padding: 10px 10px 10px 10px;
+            padding: 12px;
             background-color: #d3d3d3;
             text-shadow: -1px -1px black, 1px 1px white;
             color: gray;
