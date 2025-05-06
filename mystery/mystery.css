@@ -84,11 +84,12 @@ main {
 
 .story-container {
     background-image: url("/Images/mystery-text-bg.png");
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
     margin: auto;
     width: 30%;
-    height: 70vh;
-    padding: 40px;
+    height: 90vh;
+    padding: 100px 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
