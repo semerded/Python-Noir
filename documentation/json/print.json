@@ -1,6 +1,6 @@
 {
-    "path": "/hello-world",
-    "title": "hello world! (printing to stdout)",
+    "path": "/print",
+    "title": "hello world! (printing to the terminal)",
     "syntax": {
         "code": "<span style=\"color:var(--syntax-func)\">print</span><span>(</span><span style=\"color:var(--syntax-string)\">\"hello world!\"</span><span>)</span>",
         "description": "We call the function <span style=\"color:var(--syntax-func)\">print</span> with the text <span style=\"color:var(--syntax-string)\">\"hello world!\"</span> as an argument. Because the text is a string, we need to wrap it in quotes → \" or '. The first quote tells the computer that the following characters are a string, and the second quote closes the string so the computer knows when to stop that string."
