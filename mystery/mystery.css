@@ -92,6 +92,11 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
 }
 
 #relevant-docs-container {
