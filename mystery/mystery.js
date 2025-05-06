@@ -15,18 +15,15 @@ var expectedOutput;
 let mysteryData;
 
 fetch("/mystery/mystery-data.json")
-.then((response) => response.json())
-.then((data) => {
-    mysteryData = data;
-    insertChapterData();
-    if (savedCode !== null) {
-        textarea.value = savedCode;
-    }
-    updateHighlighting();
-});
-
-
-
+    .then((response) => response.json())
+    .then((data) => {
+        mysteryData = data;
+        insertChapterData();
+        if (savedCode !== null) {
+            textarea.value = savedCode;
+        }
+        updateHighlighting();
+    });
 
 function nextChapter() {
     currentChapter++;
@@ -70,15 +67,22 @@ function submitCode() {
             console.log("Response:", data);
             if (data.stdout) {
                 console.log("Output:", data.stdout);
+                let output = data.stdout
+                    .substring(data.stderr.indexOf(",") + 1)
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;")
+                    .replace(/\n/g, "<br>") // Replace newlines with <br> tags
+                    .replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;"); // Convert tabs to spaces
                 consoleContainer.innerHTML =
                     consolePrefix +
                     " mystery solver.exe result:<br>" +
                     "<span style='color: yellowgreen;'>" +
-                    data.stdout +
+                    output +
                     "</span>";
 
-                console.log(data.stdout, expectedOutput, data.stdout === expectedOutput);
-                
+                console.log(output, expectedOutput, output === expectedOutput);
+
                 if (data.stdout.replace(/\n/g, "") === expectedOutput) {
                     document.getElementById("popup").style.display = "flex";
                 }
@@ -116,7 +120,7 @@ function loadingAnimation(id) {
     }
 }
 
-function insertChapterData() {   
+function insertChapterData() {
     let chapterData = mysteryData[currentChapter];
     document.getElementById("story-title").innerHTML = chapterData["title"];
     document.getElementById("story-content").innerHTML = chapterData["story"];
@@ -125,23 +129,44 @@ function insertChapterData() {
     document.getElementById("popup-text").innerHTML =
         chapterData["success_message"];
     document.getElementById("editor").value = chapterData["starter_code"];
-    document.getElementById("story-type").innerHTML = "# type: " + chapterData["type"];
+    document.getElementById("story-type").innerHTML =
+        "# type: " + chapterData["type"];
     let chapter = currentChapter + 1;
-    document.getElementById("story-chapter").innerHTML = "# chapter: " + chapter;
+    document.getElementById("story-chapter").innerHTML =
+        "# chapter: " + chapter;
     expectedOutput = chapterData["expected_output"];
 
     document.getElementById("relevant-docs").innerHTML = "";
     for (let i = 0; i < chapterData["relevant_docs"].length; i++) {
         let a = document.createElement("a");
         a.innerHTML = chapterData["relevant_docs"][i].replaceAll("-", " ");
-        a.href = "/documentation/documentation.html#" + chapterData["relevant_docs"][i];
+        a.href =
+            "/documentation/documentation.html#" +
+            chapterData["relevant_docs"][i];
         a.target = "_blank";
-        document.getElementById("relevant-docs").append(a) ;
+        document.getElementById("relevant-docs").append(a);
     }
 }
 
 textarea.addEventListener("input", () => {
     localStorage.setItem("savedCode", textarea.value);
+});
+
+textarea.addEventListener("keydown", function (e) {
+    if (e.key === "Tab") {
+        e.preventDefault();
+        e.preventDefault();
+        const start = this.selectionStart;
+        const end = this.selectionEnd;
+
+        // Insert tab character
+        this.value =
+            this.value.substring(0, start) + "\t" + this.value.substring(end);
+
+        // Move cursor after the tab
+        this.selectionStart = this.selectionEnd = start + 1;
+        updateHighlighting();
+    }
 });
 
 function resetLevel() {

@@ -19,6 +19,8 @@ textarea,
     overflow: scroll;
     font-size: 14px;
     line-height: 1.4;
+    tab-size: 4;
+
 }
 
 textarea {
@@ -37,6 +39,10 @@ textarea {
         transition: background-color 400ms;
         outline: none;
         background-color: #c0c0c0;
+    }
+    &::selection {
+        color: transparent;
+        background-color: rgba(0, 0, 255, 0.174);
     }
 }
 
