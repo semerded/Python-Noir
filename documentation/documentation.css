@@ -1,23 +1,37 @@
 @import url("/main.css");
 
+body {
+    background-image: url(/Images/documentation-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
 #documentation-page {
     margin: auto;
+    padding: 0 250px;
 
-
-    max-width: 1200px;
+    max-width: 80%;
     width: 100%;
-    
+
     #page-container {
         display: flex;
+        position: relative;
 
         nav {
-            width: 300px;
+            width: 250px;
             height: 100svh;
-    
+            position: fixed;
+            left: 10%;
+
             button {
-                width: 100%;
+                width: 250px;
                 height: 35px;
                 background-color: var(--background);
+
                 color: var(--text);
                 margin: 0;
 
@@ -26,21 +40,48 @@
                 }
             }
         }
-    
+
         #documentation-content {
             display: flex;
             flex-direction: column;
+            min-height: 100svh;
             width: 100%;
-            background-color: var(--syntax-bg);
+            background-color: color-mix(
+                in srgb,
+                var(--background),
+                transparent 20%
+            );
+            backdrop-filter: blur(5px);
             color: var(--syntax-fg);
             height: 100%;
             padding: 16px;
 
-            h2 {
-                margin: 8px;
+            h2, h3 {
+                margin: 8px 2%;
+            }
+
+            p {
+                margin: 4px 5%;
+            }
+
+            hr {
+                width: 100%;
+            }
+
+            div {
+                margin: 8px 7%;
+            }
+
+            .example-block {
+                margin: 4px 5%;
+                p {
+                    margin: auto 0;
+                }
+                pre {
+                    margin: 8px 2%;
+                }
+            
             }
         }
     }
-
-    
 }

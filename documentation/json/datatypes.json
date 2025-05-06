@@ -1,0 +1,71 @@
+{
+    "path": "/datatypes",
+    "title": "Basic Data Types in Python",
+    "syntax": {
+        "code": "<span style=\"color:var(--syntax-comment)\"># examples of different types</span><br><span style=\"color:var(--syntax-keyword)\">name</span> = <span style=\"color:var(--syntax-string)\">\"Alice\"</span><br><span style=\"color:var(--syntax-keyword)\">age</span> = <span style=\"color:var(--syntax-num)\">30</span><br><span style=\"color:var(--syntax-keyword)\">height</span> = <span style=\"color:var(--syntax-num)\">1.75</span><br><span style=\"color:var(--syntax-keyword)\">is_student</span> = <span style=\"color:var(--syntax-keyword)\">False</span>",
+        "description": "In this example, we create a string, two numbers (an integer and a float), and a boolean value. Python uses different types to store different kinds of data."
+    },
+    "content": [
+        {
+            "header": "What are data types?",
+            "content": "Data types tell Python what kind of information you're working with — like text, numbers, or true/false values. Different types behave differently in code."
+        },
+        {
+            "header": "String (str)",
+            "content": "A string is a sequence of characters, like text. It must be wrapped in quotes. Example: <span style=\"color:var(--syntax-string)\">\"hello\"</span> or <span style=\"color:var(--syntax-string)\">'world'</span>."
+        },
+        {
+            "header": "Integer (int)",
+            "content": "An integer is a whole number, like <span style=\"color:var(--syntax-num)\">5</span> or <span style=\"color:var(--syntax-num)\">-42</span>. You use these when counting or doing math without decimals."
+        },
+        {
+            "header": "Float (float)",
+            "content": "A float is a number with a decimal point, like <span style=\"color:var(--syntax-num)\">3.14</span> or <span style=\"color:var(--syntax-num)\">0.5</span>. Use this when you need more precision."
+        },
+        {
+            "header": "Boolean (bool)",
+            "content": "Booleans are either <span style=\"color:var(--syntax-keyword)\">True</span> or <span style=\"color:var(--syntax-keyword)\">False</span>. You use them for logic, like answering yes/no questions."
+        }
+    ],
+    "note": {
+        "content": [
+            {
+                "header": "Python guesses types",
+                "content": "You don't need to tell Python the type. When you write <span style=\"color:var(--syntax-keyword)\">name = \"Alice\"</span>, Python knows it’s a string."
+            },
+            {
+                "header": "You can check a type",
+                "content": "Use <span style=\"color:var(--syntax-func)\">type()</span> to check the data type. Example: <span style=\"color:var(--syntax-func)\">type</span>(<span style=\"color:var(--syntax-string)\">\"hi\"</span>) returns <span style=\"color:var(--syntax-string)\">'str'</span>."
+            },
+            {
+                "header": "Variables can change types",
+                "content": "You can assign a string to a variable, then later assign a number to it. Python is flexible, but it’s important to keep track of what type you’re using."
+            }
+        ]
+    },
+    "examples": {
+        "header": "Examples",
+        "content": [
+            {
+                "description": "Example 1: A string",
+                "code": "<span style=\"color:var(--syntax-keyword)\">name</span> = <span style=\"color:var(--syntax-string)\">\"Alice\"</span>",
+                "result": "<span style=\"color:var(--syntax-string)\">\"Alice\"</span>"
+            },
+            {
+                "description": "Example 2: An integer",
+                "code": "<span style=\"color:var(--syntax-keyword)\">age</span> = <span style=\"color:var(--syntax-num)\">30</span>",
+                "result": "<span style=\"color:var(--syntax-num)\">30</span>"
+            },
+            {
+                "description": "Example 3: A float",
+                "code": "<span style=\"color:var(--syntax-keyword)\">height</span> = <span style=\"color:var(--syntax-num)\">1.75</span>",
+                "result": "<span style=\"color:var(--syntax-num)\">1.75</span>"
+            },
+            {
+                "description": "Example 4: A boolean",
+                "code": "<span style=\"color:var(--syntax-keyword)\">is_student</span> = <span style=\"color:var(--syntax-keyword)\">False</span>",
+                "result": "<span style=\"color:var(--syntax-keyword)\">False</span>"
+            }
+        ]
+    }
+}

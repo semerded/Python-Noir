@@ -1,0 +1,63 @@
+.editor-container {
+    position: relative;
+    width: 100%;
+    height: calc(70vh - 40px);
+    font-family: monospace;
+}
+
+textarea,
+.highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(70vh - 40px);
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    overflow: scroll;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+textarea {
+    background-color: #c0c0c0e1;
+    transition: background-color 400ms;
+    backdrop-filter: blur(5px);
+    color: black;
+    font-weight: 0;
+    z-index: 2;
+    resize: none;
+    border: none;
+    border-radius: 0;
+
+    &:focus {
+        transition: background-color 400ms;
+        outline: none;
+        background-color: #c0c0c0;
+    }
+}
+
+.highlight {
+    z-index: 3;
+    pointer-events: none;
+    color: black;
+}
+
+/* Syntax colors */
+.highlight .token-string {
+    color: green;
+}
+.highlight .token-keyword {
+    color: blue;
+}
+.highlight .token-number {
+    color: rgb(255, 0, 0);
+}
+.highlight .token-func {
+    color: purple;
+}
+.highlight .token-comment {
+    color: gray;
+}

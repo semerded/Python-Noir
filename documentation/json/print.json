@@ -1,6 +1,6 @@
 {
-    "path": "/hello-world",
-    "title": "hello world! (printing to stdout)",
+    "path": "/print",
+    "title": "Hello World! (Printing to the terminal)",
     "syntax": {
         "code": "<span style=\"color:var(--syntax-func)\">print</span><span>(</span><span style=\"color:var(--syntax-string)\">\"hello world!\"</span><span>)</span>",
         "description": "We call the function <span style=\"color:var(--syntax-func)\">print</span> with the text <span style=\"color:var(--syntax-string)\">\"hello world!\"</span> as an argument. Because the text is a string, we need to wrap it in quotes → \" or '. The first quote tells the computer that the following characters are a string, and the second quote closes the string so the computer knows when to stop that string."
@@ -27,7 +27,7 @@
             "content": "The computer runs the <span style=\"color:var(--syntax-func)\">print()</span> function and sends the text <span style=\"color:var(--syntax-string)\">\"hello world!\"</span> to stdout. You'll see it appear in the terminal."
         },
         {
-            "header": "multiple arguments",
+            "header": "Multiple arguments",
             "content": "You can also pass multiple arguments to the <span style=\"color:var(--syntax-func)\">print()</span> function. For example, <span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"hello\"</span>, <span style=\"color:var(--syntax-string)\">\"world\"</span>) will print <span style=\"color:var(--syntax-string)\">\"hello world\"</span> in the terminal. Notice that the arguments are separated by commas and that the <span style=\"color:var(--syntax-func)\">print</span> function automatically adds a space between each argument."
         }
     ],
@@ -38,12 +38,37 @@
                 "content": "You can also input numbers, booleans (<span style=\"color:var(--syntax-string)\">True</span> or <span style=\"color:var(--syntax-string)\">False</span>), and other datatypes as arguments for the <span style=\"color:var(--syntax-func)\">print</span> function."
             },
             {
-                "header": "standard functions",
+                "header": "Standard functions",
                 "content": "The <span style=\"color:var(--syntax-func)\">print</span> function is one of the standard functions provided in Python. You don't need to install anything to use it."
             },
             {
                 "header": "stdin and stderr",
                 "content": "We mentioned that stdout is the standard output, but you also have stderr and stdin. Stderr is the standard error, which is used to show errors and warnings. Stdin is the standard input, which is used to get input from the user."
+            }
+        ]
+    },
+    "examples": {
+        "header": "Examples",
+        "content": [
+            {
+                "description": "Example 1: Basic print statement",
+                "code": "<span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"hello world!\"</span>)",
+                "result": "<span style=\"color:var(--syntax-string)\">hello world!</span>"
+            },
+            {
+                "description": "Example 2: Printing multiple values",
+                "code": "<span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"hello\"</span>, <span style=\"color:var(--syntax-string)\">\"world\"</span>)",
+                "result": "<span style=\"color:var(--syntax-string)\">hello world</span>"
+            },
+            {
+                "description": "Example 3: Printing numbers",
+                "code": "<span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-num)\">123</span>)",
+                "result": "<span style=\"color:var(--syntax-num)\">123</span>"
+            },
+            {
+                "description": "Example 4: Printing a boolean (True or False) (see datatypes)",
+                "code": "<span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"The answer is\"</span>, <span style=\"color:var(--syntax-bool)\">True</span>)",
+                "result": "<span style=\"color:var(--syntax-string)\">The answer is True</span>"
             }
         ]
     }
