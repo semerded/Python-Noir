@@ -1,5 +1,5 @@
 {
-    "path": "/convert-to-string",
+    "path": "/string-conversion",
     "title": "converting to a string (str)",
     "syntax": {
         "code": "<span style=\"color:var(--syntax-func)\">str</span><span>(</span><span style=\"color:var(--syntax-num)\">29</span><span>)</span>",
