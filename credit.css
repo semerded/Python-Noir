@@ -1,0 +1,22 @@
+@import url('/var.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#creditors {
+    text-align: center;
+    color: var(--text-light);
+    position: absolute;
+    left: 30px;
+    top: 53%;
+    transform: translateY(-50%);
+    font-size: 1.9em;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5em;
+    padding-right: 25px;
+    color: #918c8c;
+}
