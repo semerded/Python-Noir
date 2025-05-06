@@ -149,6 +149,11 @@ function resetLevel() {
     location.reload();
 }
 
+function setLevel(level) {
+    localStorage.setItem("currentChapter", level);
+    location.reload();
+}
+
 function reset() {
     localStorage.setItem("currentChapter", 0);
     resetLevel();
