@@ -167,5 +167,11 @@ function smallHr() {
 
 
 window.addEventListener("DOMContentLoaded", () => {
-    changeHash("what-is-python");
+    if (!location.hash) {
+
+        changeHash("what-is-python");
+    }
+    else {
+        onHashChange();
+    }
 });

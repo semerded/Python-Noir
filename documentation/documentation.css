@@ -68,6 +68,10 @@ body {
                 width: 100%;
             }
 
+            div {
+                margin: 8px 7%;
+            }
+
             .example-block {
                 margin: 4px 5%;
                 p {
