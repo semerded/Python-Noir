@@ -108,6 +108,7 @@ function loadingAnimation(id) {
         animation.innerHTML = animation.innerHTML + ".";
         setTimeout(() => loadingAnimation(id), 250);
     } else {
+        // idk what else
     }
 }
 
@@ -123,13 +124,15 @@ function insertChapterData() {
         chapterData["success_message"];
     document.getElementById("editor").value = chapterData["starter_code"];
     document.getElementById("story-type").innerHTML = "# type: " + chapterData["type"];
-    document.getElementById("story-chapter").innerHTML = "# chapter: " + (++currentChapter);
+    let chapter = currentChapter + 1;
+    document.getElementById("story-chapter").innerHTML = "# chapter: " + chapter;
     expectedOutput = chapterData["expected_output"];
 
+    document.getElementById("relevant-docs").innerHTML = "";
     for (let i = 0; i < chapterData["relevant_docs"].length; i++) {
         let a = document.createElement("a");
-        a.innerHTML = chapterData["relevant_docs"][i].replace("-", " ");
-        a.href = "/documentation/documentation.html#" + chapterData["relevant_docs"][i] + ".json";
+        a.innerHTML = chapterData["relevant_docs"][i].replaceAll("-", " ");
+        a.href = "/documentation/documentation.html#" + chapterData["relevant_docs"][i];
         a.target = "_blank";
         document.getElementById("relevant-docs").append(a) ;
     }
