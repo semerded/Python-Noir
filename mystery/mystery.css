@@ -100,6 +100,9 @@ main {
         margin-top: 0;
         margin-bottom: 8px;
     }
+    p {
+        font-weight: 600;
+    }
 
     a#home-button {
         transition: box-shadow 400ms;

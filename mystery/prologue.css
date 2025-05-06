@@ -1,0 +1,34 @@
+@import url("/main.css");
+
+body {
+    background-image: url(/Images/prologue-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    padding-bottom: 10%;
+    padding-top: 5%;
+}
+
+#prologue-container {
+    background-image: url("/Images/mystery-text-bg.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto;
+    height: 90vh;
+    aspect-ratio: 9/16;
+    padding: 10% 60px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        font-weight: 600;
+    }
+}
