@@ -18,6 +18,10 @@
         {
             "header": "How to get started with Python?",
             "content": "To get started with Python, you first need to install it on your computer. Python is available for Windows, macOS, and Linux. Once you have Python installed, you can write Python code in any text editor or use an Integrated Development Environment (IDE) like PyCharm or VS Code. There are many online tutorials, resources, and courses that can help you learn Python step by step, making it easier to begin your programming journey."
+        },
+        {
+            "header": "Code structure",
+            "content": "Python doesn't just semicolons or brackets like most programming languages. It uses indentation to separate code blocks. This makes it easier to read and understand the code. Python is one of the easiest language to read and understand. It is also very versatile, making it a great choice for beginners and experienced programmers alike."
         }
     ]
 }

@@ -20,7 +20,7 @@ main {
 .code-container {
     margin-bottom: 16px;
     width: 45vw;
-    p {
+    div.top-bar {
         height: 30px;
         width: 100%;
         margin: 0;
@@ -84,14 +84,41 @@ main {
 
 .story-container {
     background-image: url("/Images/mystery-text-bg.png");
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: auto;
     width: 30%;
-    height: 70vh;
-    padding: 40px;
+    height: 90vh;
+    padding: 100px 60px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    a#home-button {
+        transition: box-shadow 400ms;
+        position: absolute;
+        top: 10%;
+        right: 10%;
+        width: 48px;
+        height: 48px;
+        background-image: url("/Images/home.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 100%;
+
+        &:hover {
+            transition: box-shadow 400ms;
+            box-shadow: black 0 0 30px;
+        }
+    }
 }
 
 #relevant-docs-container {

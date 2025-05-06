@@ -8,7 +8,8 @@ var loadingAnimationActive = false;
 
 const consoleContainer = document.getElementById("console");
 const consolePrefix = "C:\\PythonNoir>";
-let currentChapter = localStorage.getItem("currentChapter") ?? 0;
+let currentChapter = parseInt(localStorage.getItem("currentChapter")) ?? 0;
+let savedCode = localStorage.getItem("savedCode");
 var expectedOutput;
 
 let mysteryData;
@@ -18,6 +19,9 @@ fetch("/mystery/mystery-data.json")
 .then((data) => {
     mysteryData = data;
     insertChapterData();
+    if (savedCode !== null) {
+        textarea.value = savedCode;
+    }
     updateHighlighting();
 });
 
@@ -112,9 +116,7 @@ function loadingAnimation(id) {
     }
 }
 
-function insertChapterData() {
-    console.log(mysteryData);
-    
+function insertChapterData() {   
     let chapterData = mysteryData[currentChapter];
     document.getElementById("story-title").innerHTML = chapterData["title"];
     document.getElementById("story-content").innerHTML = chapterData["story"];
@@ -138,7 +140,21 @@ function insertChapterData() {
     }
 }
 
+textarea.addEventListener("input", () => {
+    localStorage.setItem("savedCode", textarea.value);
+});
+
+function resetLevel() {
+    localStorage.removeItem("savedCode");
+    location.reload();
+}
+
+function setLevel(level) {
+    localStorage.setItem("currentChapter", level);
+    location.reload();
+}
+
 function reset() {
     localStorage.setItem("currentChapter", 0);
-    location.reload();
+    resetLevel();
 }

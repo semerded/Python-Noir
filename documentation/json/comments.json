@@ -1,0 +1,54 @@
+{
+    "path": "/comments",
+    "title": "Writing Comments in Python",
+    "syntax": {
+      "code": "<span style=\"color:var(--syntax-comment)\"># This is a comment</span><br><span style=\"color:var(--syntax-keyword)\">print</span>(<span style=\"color:var(--syntax-string)\">\"Hello!\"</span>) <span style=\"color:var(--syntax-comment)\"># This is also a comment</span>",
+      "description": "Comments start with the <span style=\"color:var(--syntax-comment)\">#</span> symbol. Python ignores everything after that on the same line. Use comments to explain your code."
+    },
+    "content": [
+      {
+        "header": "What is a comment?",
+        "content": "A comment is a note in your code that Python does not run. It's for you or other people reading the code. It starts with a <span style=\"color:var(--syntax-comment)\">#</span> symbol."
+      },
+      {
+        "header": "Why do we use comments?",
+        "content": "Comments explain what your code does. This helps others (and your future self) understand your thinking. They are useful for debugging, reminders, and documentation."
+      },
+      {
+        "header": "How do you write one?",
+        "content": "Just type <span style=\"color:var(--syntax-comment)\">#</span> and then your note. You can put a comment on its own line, or at the end of a line of code."
+      },
+      {
+        "header": "Are comments required?",
+        "content": "No, but they’re a good habit. Clear comments make your code easier to understand and maintain."
+      }
+    ],
+    "note": {
+      "content": [
+        {
+          "header": "Python ignores comments",
+          "content": "Comments do not affect how your program runs. You can add or remove them without changing the behavior of your code."
+        },
+        {
+          "header": "No multi-line comments",
+          "content": "Python doesn’t have a special symbol for multi-line comments. You can write several single-line comments in a row, or use a string (like <span style=\"color:var(--syntax-string)\">'''text'''</span>) if you only need to block out code temporarily."
+        }
+      ]
+    },
+    "examples": {
+      "header": "Examples",
+      "content": [
+        {
+          "description": "Comment above a line",
+          "code": "<span style=\"color:var(--syntax-comment)\"># Greet the user</span><br><span style=\"color:var(--syntax-keyword)\">print</span>(<span style=\"color:var(--syntax-string)\">\"Hi there!\"</span>)",
+          "result": "<span style=\"color:var(--syntax-string)\">\"Hi there!\"</span>"
+        },
+        {
+          "description": "Comment at the end",
+          "code": "<span style=\"color:var(--syntax-keyword)\">print</span>(<span style=\"color:var(--syntax-string)\">\"Ready\"</span>) <span style=\"color:var(--syntax-comment)\"># Let the user know</span>",
+          "result": "<span style=\"color:var(--syntax-string)\">\"Ready\"</span>"
+        }
+      ]
+    }
+  }
+  
