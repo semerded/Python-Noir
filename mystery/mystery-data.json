@@ -1,26 +1,38 @@
 [
     {
-      "chapter": "1",
-      "title": "The Terminal Truth",
-      "type": "programming",
-      "story": "You sit at Montie's desk. The fan hums. On the screen, a message blinks:\n\n> Type \"print('Start Investigation')\" to begin\n\nThis was Montie's last script. Let's see where it leads.",
-      "concept": "Printing to terminal",
-      "challenge": "Write a Python line that outputs 'Start Investigation' to the terminal.",
-      "starter_code": "",
-      "expected_code": "print(\"Start Investigation\")",
-      "expected_output": "Start Investigation",
-      "success_message": "The terminal responds. A hidden log file unzips. You're in. The case begins now."
+        "chapter": "1",
+        "title": "The Terminal Truth",
+        "type": "programming",
+        "story": "You sit at Montie's desk. The fan hums. On the screen, a message blinks:\n\n> Type \"print('Start Investigation')\" to begin\n\nThis was Montie's last script. Let's see where it leads.",
+        "concept": "Printing to terminal",
+        "challenge": "Write a Python line that outputs 'Start Investigation' to the terminal.",
+        "starter_code": "",
+        "expected_code": "print(\"Start Investigation\")",
+        "expected_output": "Start Investigation",
+        "success_message": "The terminal responds. A new USB drive appears. You're in. Lets see what this USB drive is all about."
     },
     {
-      "chapter": "2",
-      "title": "The Locker Code",
-      "type": "programming",
-      "story": "You find a sticky note: \"Locker 42 contains backup files.\" But the locker is digital. It needs a code, and the clue? A scrambled note with:\n\ntemp = 4\ncode = temp + 2\n\nYou need to find out what value to enter.",
-      "concept": "Variables and arithmetic",
-      "challenge": "Use the variables to compute the locker code and print the result.",
-      "starter_code": "temp = 4\ncode = temp + 2\n# print the code here",
-      "expected_code": "temp = 4\ncode = temp + 2\nprint(code)",
-      "expected_output": "6",
-      "success_message": "The locker clicks open. Inside: a dusty drive labeled “Montie's Secrets - Read Me First”. This case is deeper than it looks."
+        "chapter": "2",
+        "title": "The Folder of Numbers",
+        "type": "programming",
+        "story": "You discover a folder labeled \"Piethons_Files\" on the USB drive. Inside, there's a mess of numbers scattered across the folder, ranging from 0 to 100. One of the files, \"numbers.txt,\" contains a strange note:\n\n```temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5``` \nThe numbers seem to be part of a larger pattern, and Montie never left things incomplete. It looks like you'll need to use these numbers to decode the next step in his puzzle.",
+        "concept": "Variables, arithmetic, and sequential calculations",
+        "challenge": "Output the final result by running the calculations.",
+        "starter_code": "temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\n# print the final result here",
+        "expected_code": "temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\nprint(code2)",
+        "expected_output": "29",
+        "success_message": "You run the calculations and get the correct output. The folder of numbers begins to reorganize itself, revealing a hidden file named \"Montie's_Code_of_Truth.txt.\" The page is blank, but it feels like you're on the verge of something important. There's more to uncover."
+    },
+    {
+      "chapter": "3",
+      "title": "Debugging Montie's Code",
+      "type": "debugging",
+      "story": "You open the file \"Montie's_Final_Clue\" and find a piece of code that seems to hold the key to the next step:\n\n```temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\ndecoded_message = \"The code is \" + 29\nprint(decoded_message)``` \nSomething's wrong with this code. Montie's notes mention debugging, and it looks like you need to fix the issue in this code to move forward.",
+      "concept": "Debugging, variable use, string manipulation",
+      "challenge": "Find and fix the issues in Montie's code to produce the correct output.",
+      "starter_code": "temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\ndecoded_message = \"The code is \" + code2\nprint(decoded_message)",
+      "expected_code": "temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\ndecoded_message = \"The code is \" + str(code2)\nprint(decoded_message)",
+      "expected_output": "The code is 29",
+      "success_message": "The code is fixed! You've successfully debugged Montie's message. The system lights up, revealing a hidden file called \"Montie's_Last_Clue.txt.\" It's time to unlock the final secret."
     }
-  ]
+]

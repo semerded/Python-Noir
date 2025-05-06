@@ -1,0 +1,38 @@
+{
+    "path": "/convert-to-string",
+    "title": "converting to a string (str)",
+    "syntax": {
+        "code": "<span style=\"color:var(--syntax-func)\">str</span><span>(</span><span style=\"color:var(--syntax-num)\">29</span><span>)</span>",
+        "description": "We call the function <span style=\"color:var(--syntax-func)\">str</span> with the number <span style=\"color:var(--syntax-num)\">29</span> as an argument. This tells the computer to convert the number into a string. Strings are required when you want to join text and numbers together, like in a message."
+    },
+    "content": [
+        {
+            "header": "What are we doing?",
+            "content": "We are converting a number into a string using the <span style=\"color:var(--syntax-func)\">str()</span> function. This allows us to treat the number like text."
+        },
+        {
+            "header": "Why do we need this?",
+            "content": "You cannot combine (concatenate) a number directly with a string. If you try <span style=\"color:var(--syntax-func)\">\"hello\" + 5</span>, Python will give you an error. Using <span style=\"color:var(--syntax-func)\">str()</span> turns the number into text so it can be combined with other strings."
+        },
+        {
+            "header": "How do we use it?",
+            "content": "You wrap the number or value you want to convert with <span style=\"color:var(--syntax-func)\">str()</span>. For example: <span style=\"color:var(--syntax-func)\">str</span>(<span style=\"color:var(--syntax-num)\">42</span>) will return the string <span style=\"color:var(--syntax-string\">\"42\"</span>."
+        },
+        {
+            "header": "What does it return?",
+            "content": "It returns a string version of the number. You can now use it inside other strings, such as: <span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"The answer is \"</span> + <span style=\"color:var(--syntax-func)\">str</span>(<span style=\"color:var(--syntax-num)\">42</span>))."
+        }
+    ],
+    "note": {
+        "content": [
+            {
+                "header": "Only works for display",
+                "content": "If you convert a number to a string, you can't do math with it anymore. <span style=\"color:var(--syntax-string)\">\"5\" + \"3\"</span> will give you <span style=\"color:var(--syntax-string)\">\"53\"</span>, not 8."
+            },
+            {
+                "header": "Going the other way",
+                "content": "If you have a string that contains digits, like <span style=\"color:var(--syntax-string)\">\"10\"</span>, you can turn it back into a number using <span style=\"color:var(--syntax-func)\">int()</span>."
+            }
+        ]
+    }
+}
