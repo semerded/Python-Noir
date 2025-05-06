@@ -27,7 +27,8 @@ function fetchDocumentation(name) {
                 changeHash("what-is-python");
             });
 
-    } catch {
+    } catch (e) {
+        console.error(e)
         changeHash("what-is-python");
     }
 }
