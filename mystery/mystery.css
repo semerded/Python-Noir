@@ -86,6 +86,7 @@ main {
     background-image: url("/Images/mystery-text-bg.png");
     background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     margin: auto;
     width: 30%;
     height: 90vh;

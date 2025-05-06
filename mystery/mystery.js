@@ -8,7 +8,7 @@ var loadingAnimationActive = false;
 
 const consoleContainer = document.getElementById("console");
 const consolePrefix = "C:\\PythonNoir>";
-let currentChapter = localStorage.getItem("currentChapter") ?? 0;
+let currentChapter = parseInt(localStorage.getItem("currentChapter")) ?? 0;
 var expectedOutput;
 
 let mysteryData;
