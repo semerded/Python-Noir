@@ -56,28 +56,6 @@ main {
     font-size: 4.5rem;
 }
 
-/* Start Button */
-.start-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 1.5em;
-    font-weight: bold;
-    padding: 12px 20px;
-    background-color: #d3d3d3;
-    text-shadow: -1px -1px black, 1px 1px white;
-    color: gray;
-    border-radius: 7px;
-    box-shadow: 0 .2em gray;
-    cursor: pointer;
-    transition: box-shadow 0.1s ease;
-}
-
-.start-btn:active {
-    box-shadow: none;
-    bottom: 19px;
-}
-
 /* Credits link */
 .credits-link {
     position: absolute;

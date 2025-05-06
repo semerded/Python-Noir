@@ -15,3 +15,22 @@ html, body {
     cursor: url("/Images/cursor.png"), auto;
 
 }
+
+.main-btn {
+    font-size: 2.5em;
+    font-weight: bold;
+    padding: 12px 20px;
+    background-color: #d3d3d3;
+    text-shadow: -1px -1px black, 1px 1px white;
+    color: gray;
+    border-radius: 7px;
+    box-shadow: 0 .2em gray;
+    cursor: pointer;
+    transition: box-shadow 0.1s ease;
+}
+
+.main-btn:active {
+    box-shadow: none;
+    transform: translateY(.2em);
+    transition: transform 0.1s ease;
+}
