@@ -1,0 +1,63 @@
+{
+    "path": "/if-statement",
+    "title": "if Statements in Python",
+    "syntax": {
+      "code": "<span style=\"color:var(--syntax-keyword)\">if</span> <span style=\"color:var(--syntax-keyword)\">age</span> &gt;= <span style=\"color:var(--syntax-num)\">18</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"You are an adult.\"</span>)",
+      "description": "This code checks if the variable <span style=\"color:var(--syntax-keyword)\">age</span> is 18 or more. If it is, it runs the indented line below the <span style=\"color:var(--syntax-keyword)\">if</span> statement."
+    },
+    "content": [
+      {
+        "header": "What is an if statement?",
+        "content": "An <span style=\"color:var(--syntax-keyword)\">if</span> statement lets your program make decisions. It runs code only when a condition is true."
+      },
+      {
+        "header": "Why do we need this?",
+        "content": "Without <span style=\"color:var(--syntax-keyword)\">if</span> statements, your program would always do the same thing. Conditions help you control what happens and when."
+      },
+      {
+        "header": "How do we use it?",
+        "content": "You write <span style=\"color:var(--syntax-keyword)\">if</span> followed by a condition, then a colon. The next line is indented, and it only runs if the condition is true."
+      },
+      {
+        "header": "What kind of conditions?",
+        "content": "You can compare numbers, check if values are equal, or test boolean values. Example: <span style=\"color:var(--syntax-keyword)\">if</span> <span style=\"color:var(--syntax-keyword)\">x</span> == <span style=\"color:var(--syntax-num)\">10</span>:"
+      }
+    ],
+    "note": {
+      "content": [
+        {
+          "header": "Use indentation",
+          "content": "Python uses spaces to show which code belongs to the <span style=\"color:var(--syntax-keyword)\">if</span>. Don't forget to indent the line under it!"
+        },
+        {
+          "header": "False means do nothing",
+          "content": "If the condition is false, Python skips the indented block and moves on."
+        },
+        {
+          "header": "You can add else",
+          "content": "If you want to do something when the condition is false, use <span style=\"color:var(--syntax-keyword)\">else</span>. Example: <span style=\"color:var(--syntax-keyword)\">else</span>:"
+        }
+      ]
+    },
+    "examples": {
+      "header": "Examples",
+      "content": [
+        {
+          "description": "Check if a number is positive",
+          "code": "<span style=\"color:var(--syntax-keyword)\">x</span> = <span style=\"color:var(--syntax-num)\">5</span><br><span style=\"color:var(--syntax-keyword)\">if</span> <span style=\"color:var(--syntax-keyword)\">x</span> &gt; <span style=\"color:var(--syntax-num)\">0</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"Positive\"</span>)",
+          "result": "<span style=\"color:var(--syntax-string)\">\"Positive\"</span>"
+        },
+        {
+          "description": "Condition is false, nothing prints",
+          "code": "<span style=\"color:var(--syntax-keyword)\">x</span> = <span style=\"color:var(--syntax-num)\">-3</span><br><span style=\"color:var(--syntax-keyword)\">if</span> <span style=\"color:var(--syntax-keyword)\">x</span> &gt; <span style=\"color:var(--syntax-num)\">0</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"Positive\"</span>)",
+          "result": ""
+        },
+        {
+          "description": "With else branch",
+          "code": "<span style=\"color:var(--syntax-keyword)\">x</span> = <span style=\"color:var(--syntax-num)\">-3</span><br><span style=\"color:var(--syntax-keyword)\">if</span> <span style=\"color:var(--syntax-keyword)\">x</span> &gt;= <span style=\"color:var(--syntax-num)\">0</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"Non-negative\"</span>)<br><span style=\"color:var(--syntax-keyword)\">else</span>:<br>&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-string)\">\"Negative\"</span>)",
+          "result": "<span style=\"color:var(--syntax-string)\">\"Negative\"</span>"
+        }
+      ]
+    }
+  }
+  

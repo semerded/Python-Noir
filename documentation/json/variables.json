@@ -1,0 +1,63 @@
+{
+    "path": "/variables",
+    "title": "Variables in Python",
+    "syntax": {
+      "code": "<span style=\"color:var(--syntax-keyword)\">name</span> = <span style=\"color:var(--syntax-string)\">\"Alex\"</span><br><span style=\"color:var(--syntax-keyword)\">score</span> = <span style=\"color:var(--syntax-num)\">42</span>",
+      "description": "This example creates two variables: one that stores a string (text), and one that stores a number. Variables are used to hold values so you can use them later in your code."
+    },
+    "content": [
+      {
+        "header": "What is a variable?",
+        "content": "A variable is like a box with a label. You put something inside (a value), and use the label (the variable name) to get it later. Python lets you create a variable just by assigning it a value."
+      },
+      {
+        "header": "Why do we use them?",
+        "content": "Variables help you store information so you don't have to repeat it. Instead of hardcoding values, you use variables to make code flexible and easier to read."
+      },
+      {
+        "header": "How do we create one?",
+        "content": "Just type a name, an equal sign, and a value. Python figures out the type automatically. Example: <span style=\"color:var(--syntax-keyword)\">score</span> = <span style=\"color:var(--syntax-num)\">100</span>"
+      },
+      {
+        "header": "What can you store in a variable?",
+        "content": "You can store strings, numbers, booleans, lists, and more. Anything you want to reuse or update later should go in a variable."
+      }
+    ],
+    "note": {
+      "content": [
+        {
+          "header": "Variable names matter",
+          "content": "Choose clear names. <span style=\"color:var(--syntax-keyword)\">player_score</span> is better than <span style=\"color:var(--syntax-keyword)\">x</span>. Names must start with a letter or underscore, and can't have spaces."
+        },
+        {
+          "header": "Variables can change",
+          "content": "You can assign a new value to a variable at any time. Python will replace the old one."
+        },
+        {
+          "header": "No need to declare the type",
+          "content": "In Python, you don't write <span style=\"color:var(--syntax-keyword)\">int</span> or <span style=\"color:var(--syntax-keyword)\">str</span> like in some other languages. Python figures it out for you."
+        }
+      ]
+    },
+    "examples": {
+      "header": "Examples",
+      "content": [
+        {
+          "description": "Storing and printing a name",
+          "code": "<span style=\"color:var(--syntax-keyword)\">name</span> = <span style=\"color:var(--syntax-string)\">\"Alex\"</span><br><span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-keyword)\">name</span>)",
+          "result": "<span style=\"color:var(--syntax-string)\">\"Alex\"</span>"
+        },
+        {
+          "description": "Doing math with variables",
+          "code": "<span style=\"color:var(--syntax-keyword)\">a</span> = <span style=\"color:var(--syntax-num)\">3</span><br><span style=\"color:var(--syntax-keyword)\">b</span> = <span style=\"color:var(--syntax-num)\">7</span><br><span style=\"color:var(--syntax-keyword)\">total</span> = <span style=\"color:var(--syntax-keyword)\">a</span> + <span style=\"color:var(--syntax-keyword)\">b</span><br><span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-keyword)\">total</span>)",
+          "result": "<span style=\"color:var(--syntax-num)\">10</span>"
+        },
+        {
+          "description": "Changing a variable's value",
+          "code": "<span style=\"color:var(--syntax-keyword)\">score</span> = <span style=\"color:var(--syntax-num)\">50</span><br><span style=\"color:var(--syntax-keyword)\">score</span> = <span style=\"color:var(--syntax-keyword)\">score</span> + <span style=\"color:var(--syntax-num)\">10</span><br><span style=\"color:var(--syntax-func)\">print</span>(<span style=\"color:var(--syntax-keyword)\">score</span>)",
+          "result": "<span style=\"color:var(--syntax-num)\">60</span>"
+        }
+      ]
+    }
+  }
+  

@@ -5,37 +5,50 @@
         "type": "programming",
         "story": "You sit at Montie's desk. The fan hums. On the screen, a message blinks:\n\n> Type \"print('Start Investigation')\" to begin\n\nThis was Montie's last script. Let's see where it leads.",
         "concept": "Printing to terminal",
-        "relevant_docs": ["what-is-python", "print"],
+        "relevant_docs": ["what-is-python", "print", "comments"],
         "challenge": "Write a Python line that outputs 'Start Investigation' to the terminal.",
         "starter_code": "# write your code here\n",
         "expected_code": "print(\"Start Investigation\")",
         "expected_output": "Start Investigation",
-        "success_message": "The terminal responds. A new USB drive appears. You're in. Lets see what this USB drive is all about."
+        "success_message": "The terminal responds. A new drive appears. You're in. Lets see what this drive is all about."
     },
     {
         "chapter": "2",
         "title": "The Folder of Numbers",
         "type": "programming",
-        "story": "You discover a folder labeled \"Piethons_Files\" on the USB drive. Inside, there's a mess of numbers scattered across the folder, ranging from 0 to 100. One of the files, \"numbers.txt,\" contains a strange note:\n\n```temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5``` \nThe numbers seem to be part of a larger pattern, and Montie never left things incomplete. It looks like you'll need to use these numbers to decode the next step in his puzzle.",
-        "relevant_docs": ["print"],
+        "story": "You discover a folder labeled \"Piethons_Files\" on the drive. Inside, there's a mess of numbers scattered across the folder, ranging from 0 to 100. One of the files, \"numbers.txt,\" contains a strange note:\n\n```temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5``` \nThe numbers seem to be part of a larger pattern, and Montie never left things incomplete. It looks like you'll need to use these numbers to decode the next step in his puzzle.",
+        "relevant_docs": ["print", "variables"],
         "concept": "Variables, arithmetic, and sequential calculations",
         "challenge": "Output the final result by running the calculations.",
         "starter_code": "temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\n# print the final result here\n",
         "expected_code": "temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\nprint(code2)",
         "expected_output": "29",
-        "success_message": "You run the calculations and get the correct output. You navigate to folder 29 and open it. Inside are a bunch of files, your eye catches the file named 'Montie's_password_keeper.py'."
+        "success_message": "You run the calculations and get the correct output. You navigate to folder 29 and open it. Inside are a bunch of files, your eye catches the file named 'Montie's_passcode_keeper.py'."
     },
     {
-      "chapter": "3",
-      "title": "Debugging Montie's Code",
-      "type": "debugging",
-      "story": "You open the file \"Montie's_password_keeper.py\" and find a piece of code that seems to hold Montie's password:\n\n```temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\ndecoded_message = \"The code is \" + 29\nprint(decoded_message)``` \nSomething's wrong with this code. Montie's notes mention debugging, and it looks like you need to fix the issue in this code to get the correct password.",
-      "concept": "Debugging, variable use, string manipulation",
-      "relevant_docs": ["string-conversion", "datatypes"],
-      "challenge": "Find and fix the issues in Montie's code to produce the correct output.",
-      "starter_code": "temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\ndecoded_message = \"The code is \" + code2\nprint(decoded_message)",
-      "expected_code": "temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\ndecoded_message = \"The code is \" + str(code2)\nprint(decoded_message)",
-      "expected_output": "The code is 29",
-      "success_message": "The code is fixed! You've successfully debugged Montie's message. The system lights up, revealing a hidden file called \"Montie's_Last_Clue.txt.\" It's time to unlock the final secret."
-    }
+        "chapter": "3",
+        "title": "Debugging Montie's Code",
+        "type": "debugging",
+        "story": "You open the file \"Montie's_passcode_keeper.py\" and find a piece of code that seems to hold Montie's passcode:\n\n```temp = 9\ncode1 = temp * 8\ncode2 = code1 + 1\ndecoded_message = \"Access code: \" + 73\nprint(decoded_message)```\nSomething's wrong with this code. Montie's notes mention debugging, and it looks like you need to fix the issue in this code to get the correct passcode.",
+        "concept": "Debugging, variable use, string manipulation",
+        "relevant_docs": ["string-conversion", "datatypes", "variables"],
+        "challenge": "Find and fix the issues in Montie's code to produce the correct output.",
+        "starter_code": "temp = 9\ncode1 = temp * 8\ncode2 = code1 + 1\ndecoded_message = \"Access code: \" + code2\nprint(decoded_message)",
+        "expected_code": "temp = 9\ncode1 = temp * 8\ncode2 = code1 + 1\ndecoded_message = \"Access code: \" + str(code2)\nprint(decoded_message)",
+        "expected_output": "Access code: 73",
+        "success_message": "The code is fixed. You've uncovered the correct passcode!"
+    },
+    {
+        "chapter": "4",
+        "title": "Verifying the Passcode",
+        "type": "code-completion",
+        "story": "After recovering the passcode <code>73</code>, another script becomes available: <code>verify_access.py</code>. It looks like Montie wrote this to double-check if the code is valid. Your job is to complete the script so that the access is granted only if the passcode is correct.",
+        "concept": "Conditions, comparison, if statements",
+        "relevant_docs": ["datatypes", "if-statement", "variables"],
+        "challenge": "Complete the code to check if the passcode equals 73 and print the access message if it's correct. (<code>\"Access granted\"</code>)",
+        "starter_code": "passcode = 73\n# check if the passcode is 73",
+        "expected_code": "passcode = 73\nif passcode == 73:\n    print(\"Access granted\")",
+        "expected_output": "Access granted",
+        "success_message": "Verification successful. You now have full access to Montie's code files."
+      }
 ]
