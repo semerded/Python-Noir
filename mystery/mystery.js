@@ -74,7 +74,7 @@ function submitCode() {
                 console.log(data.stdout, expectedOutput, data.stdout === expectedOutput);
                 
                 if (data.stdout.replace(/\n/g, "") === expectedOutput) {
-                    document.getElementById("popup").style.display = "block";
+                    document.getElementById("popup").style.display = "flex";
                 }
             }
             if (data.stderr) {
@@ -121,4 +121,9 @@ function insertChapterData() {
         chapterData["success_message"];
     document.getElementById("code-area").value = chapterData["starter_code"];
     expectedOutput = chapterData["expected_output"];
+}
+
+function reset() {
+    localStorage.setItem("currentChapter", 0);
+    location.reload();
 }

@@ -146,6 +146,8 @@ main {
 }
 
 #popup {
+    animation: scale-in 400ms ease-out forwards;
+    color: white;
     display: none;
     position: fixed;
     z-index: 2;
@@ -153,5 +155,57 @@ main {
     left: 25%;   
     width: 50vw;
     height: 50vh;
-    background-color: #006d1b;
+    background-color: rgba(0, 0, 0, 0.687);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
+    transition: box-shadow 400ms;
+    box-shadow: rgba(0, 0, 0, 0.687) 0 0 10px;
+
+    &:hover {
+    transition: box-shadow 400ms;
+
+    box-shadow: rgba(0, 0, 0, 0.687) 0 0 40px;
+
+    }
+
+    #popup-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+        width: 70%;
+
+        p {
+            font-size: 1.3rem;
+        }
+
+        button {
+            transition: background-color 400ms;
+
+            margin: auto;
+            width: 50%;
+            height: 50px;
+            cursor: pointer;
+            background-color: white;
+            border: None;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 8px;
+
+            &:hover {
+                transition: background-color 400ms;
+                background-color: #c0c0c0;
+            }
+        }
+    }
+}
+
+@keyframes scale-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }

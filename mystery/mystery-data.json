@@ -6,7 +6,7 @@
         "story": "You sit at Montie's desk. The fan hums. On the screen, a message blinks:\n\n> Type \"print('Start Investigation')\" to begin\n\nThis was Montie's last script. Let's see where it leads.",
         "concept": "Printing to terminal",
         "challenge": "Write a Python line that outputs 'Start Investigation' to the terminal.",
-        "starter_code": "",
+        "starter_code": "# write your code here\n",
         "expected_code": "print(\"Start Investigation\")",
         "expected_output": "Start Investigation",
         "success_message": "The terminal responds. A new USB drive appears. You're in. Lets see what this USB drive is all about."
