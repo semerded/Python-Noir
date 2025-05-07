@@ -4,13 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="Images/favicondet.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="backstory.css">
     <title>Backstory</title>
 </head>
+<header>
+    <ul>
+        <li><a href="/index.html">Home Page</a></li>
+    </ul>
+</header>
 <body>
-    <div>
-        <p>This is where our mvp detective story starts.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, cum quam corporis dolores itaque asperiores dignissimos qui quo excepturi ea culpa alias quibusdam nostrum dicta?</p>
-        <a href="index.html"><img src="Images/home.png" alt="Home Page button"></a>
+    <div id="container">
+        <p class="title">This is where your detective story starts.</p>
+        <p>In a near-future world where tech giants like Nexora Systems shape thought through AI and behavioral algorithms, one engineer—Elias Thorn—uncovers a secret protocol capable of rewriting ethical boundaries and even human memory. When he mysteriously dies, Detective Rhea Calder is drawn into a buried conspiracy involving erased logs, ghost code, and hidden messages left behind. As she unravels the truth, it becomes clear that free will itself may be programmable—and Elias might not be as gone as he seems.</p>
     </div>
+    <a class="credits-link" href="credit.html">Credits</a>
 </body>
+<audio id="bgMusic" autoplay loop>
+    <source src="Sound Effects/backstory_music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+<script>
+    const bgMusic = document.getElementById('bgMusic');
+    bgMusic.volume = 0.07; // Set volume to 50%
+    bgMusic.play().catch(error => {
+        console.error('Error playing audio:', error);
+    });
+</script>
+
 </html>
