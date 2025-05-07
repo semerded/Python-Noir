@@ -39,7 +39,8 @@
         if (currentChapter > 0) {
             const button = document.querySelector(".main-btn");
             button.href = "/mystery/mystery.html";
-            button.innerHTML = "CONTINUE (chapter " + currentChapter + ")";
+            let chapter = currentChapter + 1;
+            button.innerHTML = "CONTINUE (chapter " + chapter + ")";
         }
 
     </script>
