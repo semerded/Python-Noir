@@ -22,12 +22,15 @@ fetch("/mystery/mystery-data.json")
         if (savedCode !== null) {
             textarea.value = savedCode;
         }
+        document.title = "Chapter " + (currentChapter + 1);
         updateHighlighting();
     });
 
 function nextChapter() {
     currentChapter++;
+    document.title = "Chapter " + (currentChapter + 1);
     localStorage.setItem("currentChapter", currentChapter);
+    localStorage.removeItem("savedCode");
     document.getElementById("popup").style.display = "none";
     insertChapterData();
     document.getElementById("console").innerHTML = "Montie&apos;s-terminal>";
