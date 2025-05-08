@@ -1,36 +1,72 @@
 [
     {
-        "chapter": "1",
-        "title": "The Terminal Truth",
-        "type": "programming",
-        "story": "You sit at Montie's desk. The fan hums. On the screen, a message blinks:\n\n> Type \"print('Start Investigation')\" to begin\n\nThis was Montie's last script. Let's see where it leads.",
-        "concept": "Printing to terminal",
-        "relevant_docs": ["what-is-python", "print", "comments"],
-        "challenge": "Write a Python line that outputs 'Start Investigation' to the terminal.",
-        "starter_code": "# write your code here\n",
-        "expected_code": "print(\"Start Investigation\")",
-        "expected_output": "Start Investigation",
-        "success_message": "The terminal responds. A new drive appears. You're in. Lets see what this drive is all about."
+        "title": "Your first case...",
+        "type": "tutorial",
+        "story": "Hello detective. You've been assigned your first case, but to solve the case you need to use your tools efficiently.\nOn you left is your coding environment, you will be using this to write scripts to gather clues.\nOn top of your coding window, you can see 2 buttons. The first one resets the current level, the second one runs the code.\nThe output of your code is shown in the terminal below. Green means good, red means that there is an error in the code. The terminal explains what went wrong.\nIf you are stuck on a level, you can use the relevant documentation below or search it on Google.\nGood luck. Run the code to proceed.",
+        "relevant_docs": ["what-is-python"],
+        "challenge": "Read the info and run the code to proceed.",
+        "starter_code": "# This will be your coding window\n# You don't have to write anything yet.\nprint(\"This is the output of the code\")",
+        "expected_code": "# This will be your coding window\n# You don't have to write anything yet.\nprint(\"This is the output of the code\")",
+        "expected_output": "This is the output of the code",
+        "success_message": "Let's see if understand everything.",
+        "hint": null,
+        "mg": false
     },
     {
-        "chapter": "2",
+        "title": "Are you ready?",
+        "type": "tutorial",
+        "story": "We won't let you go that easily. Right now we have a print function, but it won't output anything because we haven't told it to print anything. Let's fix that. In between the brackets of the print function, write <code>\"Start Investigation\"</code>.\nDon't forget the double quotes! It tells the computer that it is a string (piece of text). When done correctly, the string should turn green.",
+        "relevant_docs": ["comments", "print"],
+        "challenge": "Write <code>\"Start Investigation\"</code> to the terminal.",
+        "starter_code": "# \"print\" tells the computer to print something to the terminal\nprint()",
+        "expected_code": "# \"print\" tells the computer to print something to the terminal\nprint(\"Start Investigation\")",
+        "expected_output": "Start Investigation",
+        "success_message": "Good job! You are ready to solve this case! Make sure to read the instructions carefully.",
+        "hint": null,
+        "mg": false
+    },
+    {
+        "title": "Montie's computer",
+        "type": "debugging",
+        "story": "You sit at Montie's desk. The fan hums. On the screen, there is one line of code: \n\n<code>\"print(\"View Hard Drive)\"</code>\n\nThis was Montie's last script. Let's see where it leads.\n\nRun the script. You will see that it results in an error message. Montie is not stupid, he added a security measure so that only programmers can open his hard drive. We also notice that the string doesn't turn green like they mentioned in my training.\n\nYou can use a hint if you are stuck by pressing the question mark.",
+        "relevant_docs": ["print"],
+        "challenge": "Analyze the code and figure out what is wrong",
+        "starter_code": "print(\"View Hard Drive)",
+        "expected_code": "print(\"View Hard Drive\")",
+        "expected_output": "View Hard Drive",
+        "success_message": "The terminal responds. The hard drive appears. You're in. Lets see what this drive is all about.",
+        "hint": ["The computer needs to know when the string starts and when it ends. Currently it only knows when it starts...", "The start and end of a string are annotated with single or double quotes. Currently, there is only a single quote at the start of the string"],
+        "mg": false
+    },
+    {
+        "title": "The broken password",
+        "type": "tutorial",
+        "story": "You click on the drive but it requires a password. Only Montie knew the password. How are you going to solve this????\n\n\nIf you are ever completely stuck on a level, you can use a magnifying glass. It will give you the correct code to solve the level. Make sure to analyze the code to learn what you needed to do.\nYou will get 3 magnifying glasses per case, so use it wisely. Because this is your first case, we will give you one extra, to solve this level.",
+        "relevant_docs": [],
+        "challenge": "Use the magnifying glass to find the password.",
+        "starter_code": "# input password\nprint()",
+        "expected_code": "# input password\n\n# you used the magnifying glass correctly!\n# remember to use the other 3 wisely!.\nprint(\"L3chOqpJoOkXQYI37gqvydEa\")\n# I don't think you would have guessed that...",
+        "expected_output": "L3chOqpJoOkXQYI37gqvydEa",
+        "success_message": "You cracked the password! Now you can open the drive. Remember: you can always use hints but you can only use 3 magnifying glasses.",
+        "hint": ["Try to use a magnifying glass."],
+        "mg": true
+    },
+    {
         "title": "The Folder of Numbers",
         "type": "programming",
         "story": "You discover a folder labeled \"Piethons_Files\" on the drive. Inside, there's a mess of numbers scattered across the folder, ranging from 0 to 100. One of the files, \"numbers.txt,\" contains a strange note:\n\n```temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5``` \nThe numbers seem to be part of a larger pattern, and Montie never left things incomplete. It looks like you'll need to use these numbers to decode the next step in his puzzle.",
         "relevant_docs": ["print", "variables"],
-        "concept": "Variables, arithmetic, and sequential calculations",
         "challenge": "Output the final result by running the calculations.",
         "starter_code": "temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\n# print the final result here\n",
         "expected_code": "temp = 8\ncode1 = temp * 3\ncode2 = code1 + 5\nprint(code2)",
         "expected_output": "29",
-        "success_message": "You run the calculations and get the correct output. You navigate to folder 29 and open it. Inside are a bunch of files, your eye catches the file named 'Montie's_passcode_keeper.py'."
+        "success_message": "You run the calculations and get the correct output. You navigate to folder 29 and open it. Inside are a bunch of files, your eye catches the file named 'Montie's_passcode_keeper.py'.",
+        "mg": true
     },
     {
-        "chapter": "3",
         "title": "Debugging Montie's Code",
         "type": "debugging",
         "story": "You open the file \"Montie's_passcode_keeper.py\" and find a piece of code that seems to hold Montie's passcode:\n\n```temp = 9\ncode1 = temp * 8\ncode2 = code1 + 1\ndecoded_message = \"Access code: \" + 73\nprint(decoded_message)```\nSomething's wrong with this code. Montie's notes mention debugging, and it looks like you need to fix the issue in this code to get the correct passcode.",
-        "concept": "Debugging, variable use, string manipulation",
         "relevant_docs": ["string-conversion", "datatypes", "variables"],
         "challenge": "Find and fix the issues in Montie's code to produce the correct output.",
         "starter_code": "temp = 9\ncode1 = temp * 8\ncode2 = code1 + 1\ndecoded_message = \"Access code: \" + code2\nprint(decoded_message)",
@@ -39,16 +75,14 @@
         "success_message": "The code is fixed. You've uncovered the correct passcode!"
     },
     {
-        "chapter": "4",
         "title": "Verifying the Passcode",
         "type": "code-completion",
         "story": "After recovering the passcode <code>73</code>, another script becomes available: <code>verify_access.py</code>. It looks like Montie wrote this to double-check if the code is valid. Your job is to complete the script so that the access is granted only if the passcode is correct.",
-        "concept": "Conditions, comparison, if statements",
         "relevant_docs": ["datatypes", "if-statement", "variables"],
         "challenge": "Complete the code to check if the passcode equals 73 and print the access message if it's correct. (<code>\"Access granted\"</code>)",
         "starter_code": "passcode = 73\n# check if the passcode is 73",
         "expected_code": "passcode = 73\nif passcode == 73:\n    print(\"Access granted\")",
         "expected_output": "Access granted",
         "success_message": "Verification successful. You now have full access to Montie's code files."
-      }
+    }
 ]
