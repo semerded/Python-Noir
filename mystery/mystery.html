@@ -2,11 +2,16 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="shortcut icon" href="/Images/favicondet.png" type="image/x-icon">
+        <link
+            rel="shortcut icon"
+            href="/Images/favicondet.png"
+            type="image/x-icon" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
         <link rel="stylesheet" href="/mystery/mystery.css" />
-        <link rel="stylesheet" href="/mystery/code-area.css">
+        <link rel="stylesheet" href="/mystery/code-area.css" />
         <title>Chapter 1</title>
     </head>
     <body>
@@ -16,14 +21,21 @@
                     <div class="top-bar">
                         <span>mystery-solver.exe</span>
                         <div>
-                            <button onclick="resetLevel()">Reset level&nbsp;<i class="fa-solid fa-rotate-left"></i></button>
-                                    <button onclick="submitCode()">Submit code&nbsp;<i class="fa-solid fa-play"></i></button>
+                            <button onclick="resetLevel()">
+                                Reset level&nbsp;<i
+                                    class="fa-solid fa-rotate-left"></i>
+                            </button>
+                            <button onclick="submitCode()">
+                                Submit code&nbsp;<i
+                                    class="fa-solid fa-play"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="editor-container">
-                        <pre class="highlight"><code id="highlighted"></code></pre>
+                        <pre
+                            class="highlight"><code id="highlighted"></code></pre>
                         <textarea id="editor" spellcheck="false"></textarea>
-                      </div>
+                    </div>
                     <!-- <textarea name="" id="code-area"></textarea> -->
                 </div>
                 <div class="console-container">
@@ -42,11 +54,22 @@
                 </div>
                 <div id="relevant-docs-container">
                     <h4>Relevant documentation</h4>
-                    <div id="relevant-docs">
-                    </div>
+                    <div id="relevant-docs"></div>
                     <p>*levels are saved automatically</p>
                 </div>
-                
+                <button id="hint-button" onclick="toggleHint()" title="show a hint">
+                    <i class="fa-solid fa-circle-question"></i>
+                </button>
+
+                <div id="hint-popup">
+                    <p id="hint"></p>
+                    <div>
+                        <button onclick="previousHint()">Previous Hint</button>
+                        <span id="hints-available">1/1</span>
+                        <button onclick="nextHint()">Next Hint</button>
+                        <button id="use-magnifying-glass" onclick="useMagnifyingGlass()">Use Magnifying Glass</button>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -61,14 +84,14 @@
         <script src="/mystery/syntaxHighlighting.js"></script>
         <script src="/mystery/mystery.js"></script>
         <audio id="bgMusic" autoplay loop>
-            <source src="../Sound Effects/challenge1.mp3" type="audio/mpeg">
+            <source src="../Sound Effects/challenge1.mp3" type="audio/mpeg" />
             Your browser does not support the audio element.
         </audio>
         <script>
-            const bgMusic = document.getElementById('bgMusic');
+            const bgMusic = document.getElementById("bgMusic");
             bgMusic.volume = 0.5; // Set volume to 50%
-            bgMusic.play().catch(error => {
-                console.error('Error playing audio:', error);
+            bgMusic.play().catch((error) => {
+                console.error("Error playing audio:", error);
             });
         </script>
     </body>

@@ -80,8 +80,6 @@ main {
     box-shadow: 0 0 20px rgb(0, 0, 0);
 }
 
-
-
 .story-container {
     background-image: url("/Images/mystery-text-bg.png");
     background-size: contain;
@@ -102,6 +100,7 @@ main {
     }
     p {
         font-weight: 600;
+        line-height: 1.2rem;
     }
 
     a#home-button {
@@ -122,6 +121,68 @@ main {
             box-shadow: black 0 0 30px;
         }
     }
+
+    code {
+        color: var(--primary-light);
+    }
+
+    > button {
+        all: unset;
+
+        cursor: pointer;
+        transition: box-shadow 400ms;
+        display: flex;
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+        width: 48px;
+        height: 48px;
+        font-size: 48px;
+        justify-content: center;
+        align-items: center;
+        color: var(--sepia-light);
+        border-radius: 24px;
+
+        &:hover {
+            transition: box-shadow 400ms;
+            box-shadow: black 0 0 30px;
+        }
+    }
+
+    #hint-popup {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        right: 10%;
+        bottom: calc(10% + 50px);
+        width: 500px;
+        height: 200px;
+        background-color: var(--sepia-dark);
+        color: white;
+        border-radius: 8px;
+        box-shadow: black 2px 2px 16px;
+        padding: 8px;
+
+        span {
+            padding: 8px;
+        }
+
+        button {
+            all: unset;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: 1px 1px 4px black;
+            border-radius: 4px;
+            width: 100px;
+            height: 30px;
+            background-color: var(--primary-light);
+
+            &#use-magnifying-glass {
+                width: 220px;
+            }
+        }
+    }
 }
 
 #relevant-docs-container {
@@ -140,7 +201,7 @@ main {
             font-size: larger;
             font-weight: 700;
             width: fit-content;
-            
+
             &:hover {
                 color: var(--primary-light);
             }

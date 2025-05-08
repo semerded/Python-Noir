@@ -4,13 +4,23 @@
 const apiUrl = "https://glot.io/api/run/python/latest";
 const proxyUrl = "http://localhost:5000/proxy?url="; // Proxy URL
 const url = proxyUrl + apiUrl;
-var loadingAnimationActive = false;
+let loadingAnimationActive = false;
 
 const consoleContainer = document.getElementById("console");
 const consolePrefix = "C:\\PythonNoir>";
 let currentChapter = parseInt(localStorage.getItem("currentChapter")) ?? 0;
 let savedCode = localStorage.getItem("savedCode");
-var expectedOutput;
+let expectedOutput;
+let expectedCode;
+let currentHintIndex = 0;
+let hints = [];
+let magnifyingGlassConfirmCounter = 0;
+
+let magnifyingGlassCount = localStorage.getItem("magnifyingGlassCount");
+if (magnifyingGlassCount === null) {
+    localStorage.setItem("magnifyingGlassCount", 3);
+    magnifyingGlassCount = 0;
+}
 
 let mysteryData;
 
@@ -28,12 +38,19 @@ fetch("/mystery/mystery-data.json")
 
 function nextChapter() {
     currentChapter++;
+    if (currentChapter == 3) {
+        localStorage.setItem("magnifyingGlassCount", 4);
+        magnifyingGlassCount = 4;
+    }
+    magnifyingGlassConfirmCounter = 0;
     document.title = "Chapter " + (currentChapter + 1);
     localStorage.setItem("currentChapter", currentChapter);
     localStorage.removeItem("savedCode");
     document.getElementById("popup").style.display = "none";
     insertChapterData();
     document.getElementById("console").innerHTML = "Montie&apos;s-terminal>";
+    document.getElementById("hint").style.display = "none";
+    localStorage.setItem("mg-used", false);
     updateHighlighting();
 }
 
@@ -126,12 +143,19 @@ function loadingAnimation(id) {
 function insertChapterData() {
     let chapterData = mysteryData[currentChapter];
     document.getElementById("story-title").innerHTML = chapterData["title"];
-    document.getElementById("story-content").innerHTML = chapterData["story"];
+    document.getElementById("story-content").innerHTML = chapterData[
+        "story"
+    ].replaceAll("\n", "<br>");
     document.getElementById("story-challenge").innerHTML =
         chapterData["challenge"];
     document.getElementById("popup-text").innerHTML =
         chapterData["success_message"];
-    document.getElementById("editor").value = chapterData["starter_code"];
+    if (localStorage.getItem("mg-used") === "true") {
+        document.getElementById("editor").value = chapterData["expected_code"];
+    } else {
+        document.getElementById("editor").value =
+            "# Magnifying glass used\n\n" + chapterData["starter_code"];
+    }
     document.getElementById("story-type").innerHTML =
         "# type: " + chapterData["type"];
     let chapter = currentChapter + 1;
@@ -149,6 +173,86 @@ function insertChapterData() {
         a.target = "_blank";
         document.getElementById("relevant-docs").append(a);
     }
+
+    const hintButton = document.getElementById("hint-button");
+    if (chapterData["hint"] != null) {
+        hintButton.style.display = "flex";
+        hints = chapterData["hint"];
+
+        updateHint();
+    } else {
+        hintButton.style.display = "none";
+    }
+
+    if (chapterData["mg"]) {
+        document.getElementById("use-magnifying-glass").innerHTML =
+            "Use magnifying glass, " + magnifyingGlassCount + " left";
+    } else {
+        document.getElementById("use-magnifying-glass").style.display = "none";
+    }
+}
+
+function updateHint() {
+    document.getElementById("hint").innerHTML = hints[currentHintIndex];
+    document.getElementById("hints-available").innerHTML =
+        currentHintIndex + 1 + "/" + hints.length;
+}
+
+function toggleHint() {
+    const hint = document.getElementById("hint-popup");
+    const hintButtonIcon = document.getElementById("hint-button").children[0];
+
+    if (hint.style.display === "flex") {
+        hint.style.display = "none";
+        hintButtonIcon.classList.remove("fa-circle-xmark");
+        hintButtonIcon.classList.add("fa-circle-question");
+        magnifyingGlassConfirmCounter = 0;
+        document.getElementById("use-magnifying-glass").innerHTML =
+        "Use magnifying glass, " + magnifyingGlassCount + " left";
+    } else {
+        hint.style.display = "flex";
+        hintButtonIcon.classList.remove("fa-circle-question");
+        hintButtonIcon.classList.add("fa-circle-xmark");
+    }
+}
+
+function nextHint() {
+    if (currentHintIndex + 1 < hints.length) {
+        currentHintIndex++;
+        updateHint();
+    }
+}
+
+function previousHint() {
+    if (currentHintIndex - 1 >= 0) {
+        currentHintIndex--;
+        updateHint();
+    }
+}
+
+function useMagnifyingGlass() {
+    let magnifyingGlassButton = document.getElementById("use-magnifying-glass");
+    if (magnifyingGlassCount === 0) {
+        magnifyingGlassButton.innerHTML = "Out of magnifying glasses";
+        return;
+    }
+
+    switch (magnifyingGlassConfirmCounter) {
+        case 0:
+            magnifyingGlassButton.innerHTML = "Are you sure?";
+            break;
+        case 1:
+            magnifyingGlassCount--;
+            localStorage.setItem("magnifyingGlassCount", magnifyingGlassCount);
+            magnifyingGlassButton.innerHTML =
+                "1 magnifying glass used, " + magnifyingGlassCount + " left";
+            localStorage.setItem("mg-used", true);
+            document.getElementById("editor").value =
+                "# Magnifying glass used\n\n" + chapterData["starter_code"];
+
+            break;
+    }
+    magnifyingGlassConfirmCounter++;
 }
 
 textarea.addEventListener("input", () => {
