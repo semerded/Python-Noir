@@ -47,9 +47,9 @@ function nextChapter() {
     localStorage.setItem("currentChapter", currentChapter);
     localStorage.removeItem("savedCode");
     document.getElementById("popup").style.display = "none";
+    document.getElementById("hint-popup").style.display = "none";
     insertChapterData();
     document.getElementById("console").innerHTML = "Montie&apos;s-terminal>";
-    document.getElementById("hint").style.display = "none";
     localStorage.setItem("mg-used", false);
     updateHighlighting();
 }
@@ -187,6 +187,7 @@ function insertChapterData() {
     if (chapterData["mg"]) {
         document.getElementById("use-magnifying-glass").innerHTML =
             "Use magnifying glass, " + magnifyingGlassCount + " left";
+        document.getElementById("use-magnifying-glass").style.display = "inline";
     } else {
         document.getElementById("use-magnifying-glass").style.display = "none";
     }
@@ -249,7 +250,8 @@ function useMagnifyingGlass() {
             localStorage.setItem("mg-used", true);
             document.getElementById("editor").value =
                 "# Magnifying glass used\n\n" + chapterData["starter_code"];
-
+            updateHighlighting();
+            location.reload();
             break;
     }
     magnifyingGlassConfirmCounter++;
@@ -272,7 +274,7 @@ textarea.addEventListener("keydown", function (e) {
 
         // Move cursor after the tab
         this.selectionStart = this.selectionEnd = start + 1;
-        updateHighlighting();
+        hihg();
     }
 });
 
