@@ -1,0 +1,21 @@
+.level-container {
+    padding: 2rem;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.levels {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Spacing between buttons */
+    flex-wrap: wrap;
+}
+
+.future-levels {
+    margin-top: 2rem;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: gray;
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Images/favicondet.png" type="image/x-icon">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="levels.css">
+    <title>Level Selection</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <ul>
+                <li><a href="/index.html">Home Page</a></li>
+                <li><a href="/backstory.html">Backstory</a></li>
+            </ul>
+        </header>
+        <main class="level-container">
+        <div class="levels ">
+            <a class="main-btn" href="/mystery/">01</a>
+            <a class="main-btn" href="/mystery/">02</a>
+            <a class="main-btn" href="/mystery/">03</a>
+            <a class="main-btn" href="/mystery/">04</a>
+            <a class="main-btn" href="/mystery/">05</a>
+            <a class="main-btn" href="/mystery/">06</a>
+        </div>
+        <p class="future-levels">More levels will come in the future...</p>
+    </main>
+        <a class="credits-link" href="credit.html">Credits</a>
+    </div>
+    <audio id="bgMusic" autoplay loop>
+        <source src="Sound Effects/backstory_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.volume = 0.07; // Set volume to 50%
+        bgMusic.play().catch(error => {
+            console.error('Error playing audio:', error);
+        });
+    </script>
+    <script>
+        let currentChapter = parseInt(localStorage.getItem("currentChapter") ?? 0);
+        if (currentChapter > 0) {
+            const button = document.querySelector(".main-btn");
+            button.href = "/mystery/mystery.html";
+            let chapter = currentChapter + 1;
+            button.innerHTML = "CONTINUE (chapter " + chapter + ")";
+        }
+
+    </script>
+</body>
+</html>
