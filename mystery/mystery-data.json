@@ -8,7 +8,7 @@
         "starter_code": "# This will be your coding window\n# You don't have to write anything yet.\nprint(\"This is the output of the code\")",
         "expected_code": "# This will be your coding window\n# You don't have to write anything yet.\nprint(\"This is the output of the code\")",
         "expected_output": "This is the output of the code",
-        "success_message": "Let's see if understand everything.",
+        "success_message": "Let's test if you are ready to start the investigation.",
         "hint": null,
         "mg": false
     },
