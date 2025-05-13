@@ -167,10 +167,10 @@ function insertChapterData() {
     document.getElementById("popup-text").innerHTML =
         chapterData["success_message"];
     if (parseInt(localStorage.getItem("mg-used")) === 1) {
-        document.getElementById("editor").value = chapterData["expected_code"];
+        document.getElementById("editor").value = "# Magnifying glass used\n\n" + chapterData["expected_code"];
     } else {
         document.getElementById("editor").value =
-            "# Magnifying glass used\n\n" + chapterData["starter_code"];
+             chapterData["starter_code"];
     }
     document.getElementById("story-type").innerHTML =
         "# type: " + chapterData["type"];
