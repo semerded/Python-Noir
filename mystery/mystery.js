@@ -103,17 +103,24 @@ function submitCode() {
                     .replace(/>/g, "&gt;")
                     .replace(/\n/g, "<br>") // Replace newlines with <br> tags
                     .replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;"); // Convert tabs to spaces
-                consoleContainer.innerHTML =
+                
+
+                if (data.stdout.replace(/\n/g, "") === expectedOutput) {
+                    consoleContainer.innerHTML =
                     consolePrefix +
                     " mystery solver.exe result:<br>" +
                     "<span style='color: yellowgreen;'>" +
                     output +
                     "</span>";
-
-                console.log(output, expectedOutput, output === expectedOutput);
-
-                if (data.stdout.replace(/\n/g, "") === expectedOutput) {
                     document.getElementById("popup").style.display = "flex";
+                } else {
+                    consoleContainer.innerHTML =
+                    consolePrefix +
+                    " mystery solver.exe warning:<br>" +
+                    "<span style='color: yellow;'>Your code ran correctly, but the output contains a typo...</span><br>" +
+                    "<span style='color: yellowgreen;'>" +
+                    output +
+                    "</span>";
                 }
             }
             if (data.stderr) {
