@@ -105,7 +105,7 @@ function submitCode() {
                     .replace(/\t/g, "&nbsp;&nbsp;&nbsp;&nbsp;"); // Convert tabs to spaces
                 
 
-                if (data.stdout.replace(/\n/g, "") === expectedOutput) {
+                if (data.stdout.replace(/\n/g, "").toLowerCase() === expectedOutput.toLowerCase()) {
                     consoleContainer.innerHTML =
                     consolePrefix +
                     " mystery solver.exe result:<br>" +
