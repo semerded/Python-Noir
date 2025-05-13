@@ -15,6 +15,7 @@ let expectedCode;
 let currentHintIndex = 0;
 let hints = [];
 let magnifyingGlassConfirmCounter = 0;
+let chapterData;
 
 let magnifyingGlassCount = localStorage.getItem("magnifyingGlassCount");
 if (magnifyingGlassCount === null) {
@@ -30,7 +31,13 @@ fetch("/mystery/mystery-data.json")
         mysteryData = data;
         insertChapterData();
         if (savedCode !== null) {
-            textarea.value = savedCode;
+            if (parseInt(localStorage.getItem("mg-used")) === 1) {
+                
+                textarea.value =
+                    "# Magnifying glass used\n\n" + chapterData["expected_code"];
+            } else {
+                textarea.value = savedCode;
+            }
         }
         document.title = "Chapter " + (currentChapter + 1);
         updateHighlighting();
@@ -43,6 +50,7 @@ function nextChapter() {
         magnifyingGlassCount = 4;
     }
     magnifyingGlassConfirmCounter = 0;
+    currentHintIndex = 0;
     document.title = "Chapter " + (currentChapter + 1);
     localStorage.setItem("currentChapter", currentChapter);
     localStorage.removeItem("savedCode");
@@ -50,7 +58,8 @@ function nextChapter() {
     document.getElementById("hint-popup").style.display = "none";
     insertChapterData();
     document.getElementById("console").innerHTML = "Montie&apos;s-terminal>";
-    localStorage.setItem("mg-used", false);
+    localStorage.setItem("mg-used", 0);
+    localStorage.removeItem("savedCode");
     updateHighlighting();
 }
 
@@ -141,7 +150,7 @@ function loadingAnimation(id) {
 }
 
 function insertChapterData() {
-    let chapterData = mysteryData[currentChapter];
+    chapterData = mysteryData[currentChapter];
     document.getElementById("story-title").innerHTML = chapterData["title"];
     document.getElementById("story-content").innerHTML = chapterData[
         "story"
@@ -150,7 +159,7 @@ function insertChapterData() {
         chapterData["challenge"];
     document.getElementById("popup-text").innerHTML =
         chapterData["success_message"];
-    if (localStorage.getItem("mg-used") === "true") {
+    if (parseInt(localStorage.getItem("mg-used")) === 1) {
         document.getElementById("editor").value = chapterData["expected_code"];
     } else {
         document.getElementById("editor").value =
@@ -185,9 +194,18 @@ function insertChapterData() {
     }
 
     if (chapterData["mg"]) {
-        document.getElementById("use-magnifying-glass").innerHTML =
-            "Use magnifying glass, " + magnifyingGlassCount + " left";
-        document.getElementById("use-magnifying-glass").style.display = "inline";
+        magnifyingGlassCount = localStorage.getItem("magnifyingGlassCount");
+        
+        if (parseInt(localStorage.getItem("mg-used")) === 1) {
+            magnifyingGlassConfirmCounter = 2;
+            document.getElementById("use-magnifying-glass").innerHTML =  "1 magnifying glass used, " + magnifyingGlassCount + " left";
+        } else {
+            document.getElementById("use-magnifying-glass").innerHTML =
+                "Use magnifying glass, " + magnifyingGlassCount + " left";
+                
+            }
+            document.getElementById("use-magnifying-glass").style.display =
+                "inline";
     } else {
         document.getElementById("use-magnifying-glass").style.display = "none";
     }
@@ -209,7 +227,7 @@ function toggleHint() {
         hintButtonIcon.classList.add("fa-circle-question");
         magnifyingGlassConfirmCounter = 0;
         document.getElementById("use-magnifying-glass").innerHTML =
-        "Use magnifying glass, " + magnifyingGlassCount + " left";
+            "Use magnifying glass, " + magnifyingGlassCount + " left";
     } else {
         hint.style.display = "flex";
         hintButtonIcon.classList.remove("fa-circle-question");
@@ -247,11 +265,15 @@ function useMagnifyingGlass() {
             localStorage.setItem("magnifyingGlassCount", magnifyingGlassCount);
             magnifyingGlassButton.innerHTML =
                 "1 magnifying glass used, " + magnifyingGlassCount + " left";
-            localStorage.setItem("mg-used", true);
-            document.getElementById("editor").value =
+            localStorage.setItem("mg-used", 1);
+            insertChapterData();
+            textarea.value =
                 "# Magnifying glass used\n\n" + chapterData["starter_code"];
+                
             updateHighlighting();
-            location.reload();
+            location.reload()
+            break;
+        default:
             break;
     }
     magnifyingGlassConfirmCounter++;
@@ -274,7 +296,6 @@ textarea.addEventListener("keydown", function (e) {
 
         // Move cursor after the tab
         this.selectionStart = this.selectionEnd = start + 1;
-        hihg();
     }
 });
 
@@ -290,5 +311,6 @@ function setLevel(level) {
 
 function reset() {
     localStorage.setItem("currentChapter", 0);
+    localStorage.removeItem("mg-used");
     resetLevel();
 }
